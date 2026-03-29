@@ -1,0 +1,47 @@
+name: Deploy a Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Build y deploy
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Instalar dependencias
+        run: npm ci
+
+      - name: Build del proyecto
+        run: npm run build
+        env:
+          PUBLIC_SITE_URL: ${{ github.ref == 'refs/heads/main' && 'https://netcom.cl' || 'https://staging.netcom.cl' }}
+          PUBLIC_COMPANY_PHONE: ${{ secrets.PUBLIC_COMPANY_PHONE }}
+          PUBLIC_COMPANY_EMAIL: ${{ secrets.PUBLIC_COMPANY_EMAIL }}
+          PUBLIC_COMPANY_WHATSAPP: ${{ secrets.PUBLIC_COMPANY_WHATSAPP }}
+          CONTACT_WEBHOOK_URL: ${{ secrets.CONTACT_WEBHOOK_URL }}
+
+      - name: Deploy a Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=netcom-spa --commit-dirty=true

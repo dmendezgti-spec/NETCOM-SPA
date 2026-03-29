@@ -3,28 +3,30 @@ interface Props {
   title: string;
   short: string;
   href?: string;
+  accent?: boolean;
 }
 
-const { title, short, href = '/servicios' } = Astro.props;
+const { title, short, href = '/servicios', accent = false } = Astro.props;
 ---
 
-<article class="panel card-outline h-full p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-300/25 hover:bg-white/[0.06]">
-  <div class="flex h-full flex-col justify-between gap-6">
-    <div class="space-y-4">
-      <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-400/10 text-brand-200">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-          <path d="M5 19L19 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-          <path d="M9 5H19V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-      </span>
-      <div>
-        <h3 class="heading-card">{title}</h3>
-        <p class="copy-sm mt-3">{short}</p>
-      </div>
-    </div>
-    <a href={href} class="inline-flex items-center gap-2 text-sm font-semibold text-brand-200 transition hover:text-accent">
-      Ver detalle
-      <span aria-hidden="true">→</span>
-    </a>
+<article class:list={[
+  'group relative flex h-full flex-col gap-5 rounded-2xl border p-6 transition duration-200',
+  accent
+    ? 'border-warning/20 bg-warning/[0.04] hover:border-warning/35 hover:bg-warning/[0.07]'
+    : 'border-white/10 bg-white/[0.04] hover:border-brand-300/25 hover:bg-white/[0.07]',
+]}>
+  <div class="flex-1 space-y-3">
+    <h3 class="heading-card">{title}</h3>
+    <p class="copy-sm">{short}</p>
   </div>
+  <a
+    href={href}
+    class:list={[
+      'inline-flex items-center gap-1.5 text-sm font-semibold transition',
+      accent ? 'text-warning/80 hover:text-warning' : 'text-brand-200/80 hover:text-brand-100',
+    ]}
+  >
+    Más información
+    <span aria-hidden="true" class="transition-transform group-hover:translate-x-0.5">→</span>
+  </a>
 </article>

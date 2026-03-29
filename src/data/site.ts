@@ -17,17 +17,17 @@ export const siteConfig = {
   email: import.meta.env.PUBLIC_COMPANY_EMAIL || 'contacto@netcom.cl',
   whatsapp: hasPlaceholderDigits(envWhatsapp) ? '56954293135' : normalizeWhatsapp(envWhatsapp) || '56954293135',
   hero: {
-    badge: 'Software · Redes · Infraestructura técnica',
-    title: 'Soluciones tecnológicas e infraestructura técnica ejecutadas con estándar corporativo.',
+    badge: 'Software · Redes · CCTV · Obras e instalaciones',
+    title: 'Tecnología e infraestructura técnica para empresas que operan sin margen de error.',
     description:
-      'NETCOM integra software, conectividad, seguridad y ejecución en terreno para habilitar y mantener infraestructura tecnológica y comercial bajo una sola contraparte técnica.',
-    primaryCta: 'Cotizar proyecto',
+      'NETCOM ejecuta proyectos de software, conectividad, seguridad y obras técnicas con un solo equipo, sin subcontratos y con criterio corporativo de principio a fin.',
+    primaryCta: 'Solicitar cotización',
     secondaryCta: 'Ver servicios',
   },
   stats: [
-    { value: 'TI + Obras', label: 'Dos líneas de negocio integradas bajo una sola empresa' },
-    { value: 'Multisector', label: 'Retail, oficinas, bodegas, edificios y operaciones comerciales' },
-    { value: 'Soporte real', label: 'Respuesta técnica, mantención y continuidad operativa' },
+    { value: 'Sin subcontratos', label: 'TI e infraestructura ejecutadas por el mismo equipo técnico' },
+    { value: 'Dos líneas', label: 'Software y conectividad + obras, mantención e instalaciones' },
+    { value: 'Una contraparte', label: 'Un solo punto de contacto para todo el alcance del proyecto' },
   ],
   seo: {
     defaultTitle: 'NETCOM Servicios Integrales SpA | Software, redes, telecomunicaciones e instalaciones técnicas',

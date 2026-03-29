@@ -38,14 +38,11 @@ const heroVariant =
           <a href="/contacto" class="cta-primary">{heroVariant.primaryCta}</a>
           <a href="/servicios" class="cta-secondary">{heroVariant.secondaryCta}</a>
         </div>
-        <p class="max-w-2xl rounded-2xl border border-brand-300/20 bg-brand-400/10 px-4 py-3 text-sm leading-7 text-brand-100">
-          Tecnología que se implementa en terreno: desde diseño de software y redes hasta obras menores, canalización y habilitaciones técnicas para operación real.
-        </p>
-        <div class="grid gap-4 sm:grid-cols-3">
+        <div class="grid gap-3 sm:grid-cols-3">
           {siteConfig.stats.map((item) => (
             <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
-              <div class="font-display text-xl font-bold text-brand-200 md:text-2xl">{item.value}</div>
-              <p class="mt-2 text-sm leading-6 text-white/62">{item.label}</p>
+              <div class="text-xs font-bold uppercase tracking-[0.2em] text-warning">{item.value}</div>
+              <p class="mt-2 text-sm leading-6 text-white/60">{item.label}</p>
             </div>
           ))}
         </div>

@@ -1,179 +1,201 @@
 ---
-import ContactForm from '@/components/ContactForm.astro';
-import FAQAccordion from '@/components/FAQAccordion.astro';
 import HeroSection from '@/components/HeroSection.astro';
 import IndustryCard from '@/components/IndustryCard.astro';
-import InfrastructureExecutionSection from '@/components/InfrastructureExecutionSection.astro';
-import OperationVisualGallery from '@/components/OperationVisualGallery.astro';
 import ProjectCard from '@/components/ProjectCard.astro';
-import SectionHeading from '@/components/SectionHeading.astro';
 import ServiceCard from '@/components/ServiceCard.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
-import { featuredProjects, industries, serviceLines } from '@/data/site';
+import { featuredProjects, industries, serviceLines, siteConfig } from '@/data/site';
 
-const technologyServices = serviceLines.filter((service) =>
-  ['desarrollo-software', 'software-ventas-pos', 'redes-conectividad', 'telecomunicaciones', 'cctv-seguridad', 'soporte-informatico'].includes(service.slug),
+const technologyServices = serviceLines.filter((s) =>
+  ['desarrollo-software', 'software-ventas-pos', 'redes-conectividad', 'telecomunicaciones', 'cctv-seguridad', 'soporte-informatico'].includes(s.slug),
 );
-
-const infrastructureServices = serviceLines.filter((service) =>
-  ['obras-menores', 'construccion-habilitaciones'].includes(service.slug),
+const infrastructureServices = serviceLines.filter((s) =>
+  ['obras-menores', 'construccion-habilitaciones'].includes(s.slug),
 );
-
 const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
 ---
 
 <BaseLayout>
+
+  <!-- ─── 1. Hero ──────────────────────────────────────── -->
   <HeroSection variant={heroVariant} />
 
-  <InfrastructureExecutionSection />
+  <!-- ─── 2. Servicios ─────────────────────────────────── -->
+  <section class="section-space border-t border-white/[0.08]">
+    <div class="container-shell space-y-14">
 
-  <OperationVisualGallery />
-
-  <section class="section-space">
-    <div class="container-shell space-y-12">
-      <SectionHeading
-        badge="Servicios principales"
-        title="Dos líneas de negocio con el mismo peso comercial: tecnología e infraestructura"
-        description="Un solo equipo para diseñar, instalar y mantener operaciones tecnológicas y técnicas en terreno."
-      />
-
-      <div class="space-y-6">
-        <div class="flex items-center justify-between gap-4">
-          <h3 class="heading-card">Línea TI y conectividad</h3>
-          <a href="/servicios" class="text-sm font-semibold text-brand-200 hover:text-white">Ver todo el portafolio →</a>
+      <!-- Encabezado de sección -->
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div class="space-y-3">
+          <span class="eyebrow">Servicios</span>
+          <h2 class="heading-section max-w-2xl">Software, conectividad, seguridad e infraestructura técnica.</h2>
         </div>
-        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {technologyServices.map((service) => (
-            <ServiceCard title={service.title} short={service.short} href={`/servicios#${service.slug}`} />
+        <a href="/servicios" class="text-sm font-semibold text-white/60 underline-offset-4 hover:text-white hover:underline">
+          Ver portafolio completo →
+        </a>
+      </div>
+
+      <!-- Línea TI -->
+      <div class="space-y-5">
+        <div class="flex items-center gap-3">
+          <span class="h-px flex-1 bg-white/10"></span>
+          <p class="text-xs font-bold uppercase tracking-[0.24em] text-white/40">Tecnología e infraestructura digital</p>
+          <span class="h-px flex-1 bg-white/10"></span>
+        </div>
+        <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+          {technologyServices.map((s) => (
+            <ServiceCard title={s.title} short={s.short} href={`/servicios#${s.slug}`} />
           ))}
         </div>
       </div>
 
-      <div class="space-y-6">
-        <div class="flex items-center justify-between gap-4">
-          <h3 class="heading-card">Línea infraestructura, mantención y obras</h3>
-          <a href="/contacto" class="text-sm font-semibold text-brand-200 hover:text-white">Cotizar ejecución en terreno →</a>
+      <!-- Línea Infraestructura -->
+      <div class="space-y-5">
+        <div class="flex items-center gap-3">
+          <span class="h-px flex-1 bg-warning/30"></span>
+          <p class="text-xs font-bold uppercase tracking-[0.24em] text-warning/70">Obras, instalaciones y mantención en terreno</p>
+          <span class="h-px flex-1 bg-warning/30"></span>
         </div>
-        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
-          {infrastructureServices.map((service) => (
-            <ServiceCard title={service.title} short={service.short} href={`/servicios#${service.slug}`} />
+        <div class="grid gap-5 sm:grid-cols-2">
+          {infrastructureServices.map((s) => (
+            <ServiceCard title={s.title} short={s.short} href={`/servicios#${s.slug}`} accent />
           ))}
         </div>
       </div>
 
-      <div class="grid gap-4 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 text-sm leading-7 text-white/70 md:grid-cols-3">
-        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">Una contraparte técnica para todo el proyecto.</div>
-        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">Coordinación entre oficina, obra e infraestructura.</div>
-        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">Menos fricción operativa y mayor velocidad de ejecución.</div>
-      </div>
     </div>
   </section>
 
-  <section class="section-space pt-0">
+  <!-- ─── 3. Por qué NETCOM ─────────────────────────────── -->
+  <section class="section-space">
     <div class="container-shell">
-      <div class="panel card-outline grid gap-8 p-8 lg:grid-cols-[1fr,1.1fr] lg:p-10">
-        <div>
+      <div class="panel card-outline overflow-hidden">
+
+        <!-- Header horizontal del panel -->
+        <div class="border-b border-white/10 px-8 py-7 lg:px-10">
           <span class="eyebrow">Por qué NETCOM</span>
-          <h2 class="heading-section mt-5">
-            Una sola contraparte para coordinar tecnología, operación e infraestructura técnica.
+          <h2 class="heading-section mt-4 max-w-2xl">
+            Una sola empresa para todo el alcance del proyecto. Sin dispersar responsabilidades.
           </h2>
         </div>
-        <div class="grid gap-4 md:grid-cols-2">
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <h3 class="heading-card">Continuidad operativa</h3>
-            <p class="mt-3 text-sm leading-7 text-white/62">Diseño, instalación, mantención y soporte para reducir interrupciones en la operación comercial y técnica.</p>
+
+        <!-- Grid de diferenciadores -->
+        <div class="grid divide-y divide-white/[0.07] sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4 lg:divide-y-0">
+          <div class="p-6 lg:p-7">
+            <div class="mb-3 text-warning">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="heading-card">Sin subcontratos</h3>
+            <p class="copy-sm mt-2">El mismo equipo diseña, instala y mantiene. Sin cadenas largas ni pérdida de criterio técnico.</p>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <h3 class="heading-card">Capacidad de terreno</h3>
-            <p class="mt-3 text-sm leading-7 text-white/62">Ejecución en obra, canalización, habilitación y montajes técnicos con estándar corporativo.</p>
+          <div class="p-6 lg:p-7">
+            <div class="mb-3 text-warning">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+            </div>
+            <h3 class="heading-card">TI + Obras integradas</h3>
+            <p class="copy-sm mt-2">Software, redes, CCTV y ejecución en terreno coordinados desde un solo punto de contacto.</p>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <h3 class="heading-card">Criterio técnico comercial</h3>
-            <p class="mt-3 text-sm leading-7 text-white/62">Soluciones aterrizadas para pymes, retail, oficinas y operaciones que requieren resultados medibles.</p>
+          <div class="p-6 lg:p-7">
+            <div class="mb-3 text-warning">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="heading-card">Ejecución directa</h3>
+            <p class="copy-sm mt-2">Respuesta técnica y operativa sin dilaciones. Visitas, instalaciones y soporte coordinados internamente.</p>
           </div>
-          <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
-            <h3 class="heading-card">Base escalable</h3>
-            <p class="mt-3 text-sm leading-7 text-white/62">Modelo escalable para crecimiento por sucursales, nuevas áreas y continuidad de servicio en el tiempo.</p>
+          <div class="p-6 lg:p-7">
+            <div class="mb-3 text-warning">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="heading-card">Continuidad asegurada</h3>
+            <p class="copy-sm mt-2">Mantención, soporte y seguimiento post-proyecto para que la operación no dependa de terceros.</p>
           </div>
+        </div>
+
+        <!-- Footer del panel -->
+        <div class="border-t border-white/10 bg-white/[0.02] px-8 py-5 lg:px-10">
+          <a href="/nosotros" class="text-sm font-semibold text-white/55 hover:text-white">Conocer el equipo y enfoque →</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section-space pt-0">
-    <div class="container-shell">
-      <div class="grid gap-4 rounded-[1.75rem] border border-brand-300/20 bg-brand-400/10 p-6 md:grid-cols-4">
-        <div class="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/85">Atención a empresas, pymes y operaciones multisucursal.</div>
-        <div class="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/85">Cobertura TI, telecom, CCTV e infraestructura técnica.</div>
-        <div class="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/85">Coordinación integral entre oficina, terreno y proveedores.</div>
-        <div class="rounded-xl border border-white/15 bg-white/10 px-4 py-3 text-sm text-white/85">Foco en continuidad operativa y respuesta oportuna.</div>
+  <!-- ─── 4. Sectores que atendemos ────────────────────── -->
+  <section class="section-space border-t border-white/[0.08]">
+    <div class="container-shell space-y-10">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div class="space-y-3">
+          <span class="eyebrow">Sectores</span>
+          <h2 class="heading-section">Cada negocio tiene una realidad operativa distinta.</h2>
+        </div>
+        <a href="/soluciones" class="text-sm font-semibold text-white/60 underline-offset-4 hover:text-white hover:underline">
+          Ver soluciones por sector →
+        </a>
       </div>
-    </div>
-  </section>
-
-  <section class="section-space border-y border-white/10 bg-white/[0.02]">
-    <div class="container-shell space-y-12">
-      <SectionHeading
-        badge="Soluciones por negocio"
-        title="Servicios aterrizados a operaciones reales"
-        description="Priorizamos soluciones para operaciones que necesitan continuidad, soporte y ejecución en terreno."
-      />
-      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+      <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
         {industries.map((industry) => (
           <IndustryCard title={industry.title} description={industry.description} />
         ))}
       </div>
-      <div class="flex flex-wrap gap-4">
-        <a href="/soluciones" class="cta-primary">Explorar soluciones</a>
-        <a href="/contacto" class="cta-secondary">Cotizar habilitación e instalación</a>
-      </div>
     </div>
   </section>
 
+  <!-- ─── 5. Proyectos ──────────────────────────────────── -->
   <section class="section-space">
-    <div class="container-shell grid gap-12 lg:grid-cols-[0.95fr,1.05fr]">
-      <div class="space-y-6">
-        <SectionHeading
-          badge="Experiencia comprobada"
-          title="Proyectos listos para mostrar capacidad técnica y operativa"
-          description="Estructura simple para evidenciar experiencia en TI, seguridad e infraestructura ejecutada en terreno."
-        />
-        <a href="/proyectos" class="cta-secondary">Ver estructura de proyectos</a>
+    <div class="container-shell space-y-10">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div class="space-y-3">
+          <span class="eyebrow">Proyectos ejecutados</span>
+          <h2 class="heading-section">Casos reales en software, redes, seguridad e infraestructura.</h2>
+        </div>
+        <a href="/proyectos" class="text-sm font-semibold text-white/60 underline-offset-4 hover:text-white hover:underline">
+          Ver todos los proyectos →
+        </a>
       </div>
-      <div class="grid gap-6 md:grid-cols-2 2xl:grid-cols-3">
-        {featuredProjects.map((project) => (
-          <ProjectCard title={project.title} category={project.category} summary={project.summary} />
+      <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
+        {featuredProjects.map((p) => (
+          <ProjectCard title={p.title} category={p.category} summary={p.summary} />
         ))}
       </div>
     </div>
   </section>
 
-  <section class="section-space border-y border-white/10 bg-white/[0.02]">
-    <div class="container-shell grid gap-10 lg:grid-cols-[0.95fr,1.05fr]">
-      <div>
-        <SectionHeading
-          badge="Preguntas frecuentes"
-          title="Resolvemos dudas clave antes de cotizar"
-          description="Información directa para que tu equipo evalúe rápido alcance, tiempos y forma de trabajo con NETCOM."
-        />
+  <!-- ─── 6. Cierre comercial ───────────────────────────── -->
+  <section class="section-space border-t border-white/[0.08]">
+    <div class="container-shell">
+      <div class="panel card-outline grid gap-8 p-8 lg:grid-cols-2 lg:gap-12 lg:p-12">
+        <div class="space-y-6">
+          <h2 class="heading-section">
+            ¿Tienes un proyecto técnico, una instalación o una operación que mejorar?
+          </h2>
+          <p class="copy-md">
+            Cotiza directamente con el equipo técnico. Sin intermediarios, sin formularios interminables.
+          </p>
+          <div class="flex flex-col gap-3 sm:flex-row">
+            <a href="/contacto" class="cta-primary">Solicitar cotización</a>
+            <a href="/servicios" class="cta-secondary">Explorar servicios</a>
+          </div>
+        </div>
+        <div class="flex flex-col justify-between gap-6">
+          <div class="grid gap-4 sm:grid-cols-2">
+            <a href={`mailto:${siteConfig.email}`} class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:bg-white/[0.07]">
+              <svg class="mt-0.5 shrink-0 text-warning" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="1.5"/><polyline points="22,6 12,13 2,6" stroke="currentColor" stroke-width="1.5"/></svg>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-white/45">Correo</p>
+                <p class="mt-1 text-sm font-medium text-white">{siteConfig.email}</p>
+              </div>
+            </a>
+            <a href={`tel:${siteConfig.phone}`} class="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-5 transition hover:bg-white/[0.07]">
+              <svg class="mt-0.5 shrink-0 text-warning" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.5"/></svg>
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] text-white/45">Teléfono</p>
+                <p class="mt-1 text-sm font-medium text-white">{siteConfig.phone}</p>
+              </div>
+            </a>
+          </div>
+          <p class="text-sm text-white/40">Respondemos solicitudes con diagnóstico técnico y propuesta de alcance. Sin plantillas genéricas.</p>
+        </div>
       </div>
-      <FAQAccordion />
     </div>
   </section>
 
-  <section class="section-space">
-    <div class="container-shell grid gap-10 lg:grid-cols-[0.8fr,1.2fr]">
-      <div class="space-y-6">
-        <SectionHeading
-          badge="Cotización"
-          title="Conversemos tu proyecto técnico, comercial u obra en terreno"
-          description="Cuéntanos el objetivo y el alcance. Te respondemos con enfoque técnico y comercial."
-        />
-        <div class="rounded-[1.75rem] border border-brand-300/20 bg-brand-400/10 p-6 text-sm leading-7 text-brand-50">
-          Formulario optimizado para solicitudes TI, mantención, habilitación e instalaciones en terreno.
-        </div>
-      </div>
-      <ContactForm compact />
-    </div>
-  </section>
 </BaseLayout>

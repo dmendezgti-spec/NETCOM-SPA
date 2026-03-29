@@ -59,6 +59,34 @@ main {
   text-wrap: balance;
 }
 
+.heading-hero {
+  @apply text-balance font-display font-bold leading-[1.06] tracking-[-0.01em] text-white;
+  font-size: clamp(2.2rem, 4.8vw, 4.5rem);
+}
+
+.heading-page {
+  @apply text-balance font-display font-bold leading-[1.1] tracking-[-0.008em] text-white;
+  font-size: clamp(1.95rem, 3.9vw, 3.5rem);
+}
+
+.heading-section {
+  @apply text-balance font-display font-bold leading-tight tracking-[-0.006em] text-white;
+  font-size: clamp(1.55rem, 2.7vw, 2.45rem);
+}
+
+.heading-card {
+  @apply font-display font-bold leading-snug tracking-[-0.004em] text-white;
+  font-size: clamp(1.2rem, 1.55vw, 1.7rem);
+}
+
+.copy-md {
+  @apply text-base leading-8 text-white/70;
+}
+
+.copy-sm {
+  @apply text-sm leading-7 text-white/65;
+}
+
 .cta-primary {
   @apply inline-flex items-center justify-center rounded-full bg-warning px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-accent hover:text-ink-950;
 }

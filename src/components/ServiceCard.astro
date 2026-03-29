@@ -18,8 +18,8 @@ const { title, short, href = '/servicios' } = Astro.props;
         </svg>
       </span>
       <div>
-        <h3 class="font-display text-2xl font-bold text-white">{title}</h3>
-        <p class="mt-3 text-sm leading-7 text-white/62">{short}</p>
+        <h3 class="heading-card">{title}</h3>
+        <p class="copy-sm mt-3">{short}</p>
       </div>
     </div>
     <a href={href} class="inline-flex items-center gap-2 text-sm font-semibold text-brand-200 transition hover:text-accent">

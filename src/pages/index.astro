@@ -39,7 +39,7 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
 
       <div class="space-y-6">
         <div class="flex items-center justify-between gap-4">
-          <h3 class="font-display text-2xl font-bold text-white">Línea TI y conectividad</h3>
+          <h3 class="heading-card">Línea TI y conectividad</h3>
           <a href="/servicios" class="text-sm font-semibold text-brand-200 hover:text-accent">Ver todo el portafolio →</a>
         </div>
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
@@ -51,7 +51,7 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
 
       <div class="space-y-6">
         <div class="flex items-center justify-between gap-4">
-          <h3 class="font-display text-2xl font-bold text-white">Línea infraestructura, mantención y obras</h3>
+          <h3 class="heading-card">Línea infraestructura, mantención y obras</h3>
           <a href="/contacto" class="text-sm font-semibold text-brand-200 hover:text-accent">Cotizar ejecución en terreno →</a>
         </div>
         <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-2">
@@ -74,7 +74,7 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
       <div class="panel card-outline grid gap-8 p-8 lg:grid-cols-[1fr,1.1fr] lg:p-10">
         <div>
           <span class="eyebrow">Por qué NETCOM</span>
-          <h2 class="mt-5 text-balance font-display text-3xl font-bold text-white md:text-4xl">
+          <h2 class="heading-section mt-5">
             Una sola contraparte para coordinar tecnología, operación e infraestructura técnica.
           </h2>
         </div>
@@ -140,7 +140,7 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
         />
         <a href="/proyectos" class="cta-secondary">Ver estructura de proyectos</a>
       </div>
-      <div class="grid gap-6 md:grid-cols-3">
+      <div class="grid gap-6 md:grid-cols-2 2xl:grid-cols-3">
         {featuredProjects.map((project) => (
           <ProjectCard title={project.title} category={project.category} summary={project.summary} />
         ))}

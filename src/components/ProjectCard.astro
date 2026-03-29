@@ -9,9 +9,11 @@ const { title, category, summary } = Astro.props;
 ---
 
 <article class="panel h-full p-6">
-  <span class="inline-flex rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.24em] text-brand-100">
-    {category}
-  </span>
-  <h3 class="mt-4 font-display text-2xl font-bold text-white">{title}</h3>
-  <p class="mt-3 text-sm leading-7 text-white/62">{summary}</p>
+  <div class="flex h-full flex-col gap-4">
+    <span class="inline-flex w-fit rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-brand-100">
+      {category}
+    </span>
+    <h3 class="heading-card break-words hyphens-auto">{title}</h3>
+    <p class="copy-sm mt-auto break-words">{summary}</p>
+  </div>
 </article>

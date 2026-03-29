@@ -28,7 +28,7 @@ const visuals = [
     <div class="flex flex-wrap items-end justify-between gap-4">
       <div class="space-y-3">
         <span class="eyebrow">Capacidad operativa</span>
-        <h2 class="text-balance font-display text-3xl font-bold text-white md:text-4xl">Imágenes de referencia del servicio integral NETCOM</h2>
+        <h2 class="heading-section">Imágenes de referencia del servicio integral NETCOM</h2>
       </div>
       <a href="/contacto" class="cta-secondary">Cotizar proyecto integral</a>
     </div>
@@ -38,8 +38,8 @@ const visuals = [
         <article class="panel overflow-hidden">
           <img src={item.src} alt={item.title} loading="lazy" class="h-56 w-full object-cover" />
           <div class="p-6">
-            <h3 class="font-display text-2xl font-bold text-white">{item.title}</h3>
-            <p class="mt-3 text-sm leading-7 text-white/64">{item.description}</p>
+            <h3 class="heading-card">{item.title}</h3>
+            <p class="copy-sm mt-3">{item.description}</p>
           </div>
         </article>
       ))}

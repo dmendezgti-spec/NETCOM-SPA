@@ -97,7 +97,7 @@ export const serviceLines = [
   {
     slug: 'construccion-habilitaciones',
     title: 'Construcción, Canalización y Habilitaciones Técnicas',
-    short: 'Infraestructura física preparada para redes, seguridad y continuidad operativa.',
+    short: 'Infraestructura física diseñada para redes, seguridad y continuidad operativa.',
     description:
       'Desarrollamos canalización, habilitación y adecuaciones técnicas para soportar redes, CCTV, control de acceso, telecomunicaciones y operación comercial.',
     problems: ['Espacios sin infraestructura técnica adecuada', 'Canalización deficiente', 'Proyectos con baja coordinación entre obra y tecnología'],

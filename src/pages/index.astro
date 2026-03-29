@@ -42,19 +42,6 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
           <p class="text-xs font-bold uppercase tracking-[0.24em] text-white/40">Tecnología e infraestructura digital</p>
           <span class="h-px flex-1 bg-white/10"></span>
         </div>
-        <!-- Tira visual TI -->
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {[
-            { src: '/images/service-software.jpg', alt: 'Software y plataformas' },
-            { src: '/images/service-network.jpg', alt: 'Redes y conectividad' },
-            { src: '/images/service-cctv.jpg', alt: 'CCTV y seguridad' },
-            { src: '/images/service-support.jpg', alt: 'Soporte TI' },
-          ].map((img) => (
-            <div class="overflow-hidden rounded-2xl border border-white/10">
-              <img src={img.src} alt={img.alt} class="h-24 w-full object-cover" loading="lazy" />
-            </div>
-          ))}
-        </div>
         <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-3">
           {technologyServices.map((s) => (
             <ServiceCard title={s.title} short={s.short} href={`/servicios#${s.slug}`} />
@@ -68,17 +55,6 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
           <span class="h-px flex-1 bg-warning/30"></span>
           <p class="text-xs font-bold uppercase tracking-[0.24em] text-warning/70">Obras, instalaciones y mantención en terreno</p>
           <span class="h-px flex-1 bg-warning/30"></span>
-        </div>
-        <!-- Tira visual Infraestructura -->
-        <div class="grid grid-cols-2 gap-3">
-          {[
-            { src: '/images/service-construction.jpg', alt: 'Obras e instalaciones' },
-            { src: '/images/service-network.jpg', alt: 'Cableado y redes en terreno' },
-          ].map((img) => (
-            <div class="overflow-hidden rounded-2xl border border-warning/15">
-              <img src={img.src} alt={img.alt} class="h-32 w-full object-cover" loading="lazy" />
-            </div>
-          ))}
         </div>
         <div class="grid gap-5 sm:grid-cols-2">
           {infrastructureServices.map((s) => (

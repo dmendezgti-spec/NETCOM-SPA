@@ -45,10 +45,10 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
         <!-- Tira visual TI -->
         <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
           {[
-            { src: '/brand/visual-software.svg', alt: 'Software y plataformas' },
-            { src: '/brand/visual-network.svg', alt: 'Redes y conectividad' },
-            { src: '/brand/visual-cctv.svg', alt: 'CCTV y seguridad' },
-            { src: '/brand/visual-software.svg', alt: 'Soporte TI' },
+            { src: '/images/service-software.jpg', alt: 'Software y plataformas' },
+            { src: '/images/service-network.jpg', alt: 'Redes y conectividad' },
+            { src: '/images/service-cctv.jpg', alt: 'CCTV y seguridad' },
+            { src: '/images/service-support.jpg', alt: 'Soporte TI' },
           ].map((img) => (
             <div class="overflow-hidden rounded-2xl border border-white/10">
               <img src={img.src} alt={img.alt} class="h-24 w-full object-cover" loading="lazy" />
@@ -72,8 +72,8 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
         <!-- Tira visual Infraestructura -->
         <div class="grid grid-cols-2 gap-3">
           {[
-            { src: '/brand/visual-construction.svg', alt: 'Obras e instalaciones' },
-            { src: '/brand/visual-network.svg', alt: 'Cableado y redes en terreno' },
+            { src: '/images/service-construction.jpg', alt: 'Obras e instalaciones' },
+            { src: '/images/service-network.jpg', alt: 'Cableado y redes en terreno' },
           ].map((img) => (
             <div class="overflow-hidden rounded-2xl border border-warning/15">
               <img src={img.src} alt={img.alt} class="h-32 w-full object-cover" loading="lazy" />

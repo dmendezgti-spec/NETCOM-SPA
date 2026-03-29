@@ -50,34 +50,43 @@ const heroVariant =
 
       <div class="panel card-outline hero-highlight overflow-hidden p-0">
         <!-- Header -->
-        <div class="flex items-center justify-between gap-4 border-b border-white/10 px-7 py-4">
+        <div class="flex items-center justify-between gap-4 border-b border-white/10 px-6 py-4">
           <div class="flex items-center gap-2.5">
             <span class="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.55)]"></span>
-            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">Líneas operativas</p>
+            <p class="text-xs font-semibold uppercase tracking-[0.22em] text-white/50">Áreas de trabajo</p>
           </div>
-          <span class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/35">5 servicios</span>
+          <span class="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/35">8 servicios activos</span>
         </div>
-        <!-- Service rows -->
-        <div class="divide-y divide-white/[0.07] border-b border-white/10">
-          {[
-            { name: 'Software y plataformas', area: 'TI' },
-            { name: 'Redes y conectividad', area: 'TI' },
-            { name: 'Telecomunicaciones · CCTV', area: 'TI' },
-            { name: 'Obras e instalaciones', area: 'Terreno' },
-            { name: 'Construcción · Habilitaciones', area: 'Terreno' },
-          ].map(({ name, area }) => (
-            <div class="flex items-center justify-between px-7 py-3.5">
-              <div class="flex items-center gap-3">
-                <span class={`h-1.5 w-1.5 flex-shrink-0 rounded-full ${area === 'TI' ? 'bg-brand-300' : 'bg-warning'}`}></span>
-                <span class="text-sm text-white/80">{name}</span>
-              </div>
-              <span class={`rounded-full px-2.5 py-0.5 text-[0.62rem] font-bold uppercase tracking-wider ${area === 'TI' ? 'border border-brand-300/20 bg-brand-400/10 text-brand-200' : 'border border-warning/20 bg-warning/10 text-warning'}`}>{area}</span>
+        <!-- Visual grid 2x2 -->
+        <div class="grid grid-cols-2 divide-x divide-y divide-white/[0.07] border-b border-white/10">
+          <div class="group relative overflow-hidden">
+            <img src="/brand/visual-software.svg" alt="Software y plataformas digitales" class="h-36 w-full object-cover transition duration-500 group-hover:scale-105" loading="eager" />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/90 to-transparent px-4 py-3">
+              <span class="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-brand-200">Software · Redes</span>
             </div>
-          ))}
+          </div>
+          <div class="group relative overflow-hidden">
+            <img src="/brand/visual-cctv.svg" alt="CCTV y seguridad" class="h-36 w-full object-cover transition duration-500 group-hover:scale-105" loading="eager" />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/90 to-transparent px-4 py-3">
+              <span class="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-brand-200">CCTV · Seguridad</span>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden">
+            <img src="/brand/visual-network.svg" alt="Redes y telecomunicaciones" class="h-36 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/90 to-transparent px-4 py-3">
+              <span class="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-warning">Telecomunicaciones</span>
+            </div>
+          </div>
+          <div class="group relative overflow-hidden">
+            <img src="/brand/visual-construction.svg" alt="Obras e instalaciones técnicas" class="h-36 w-full object-cover transition duration-500 group-hover:scale-105" loading="lazy" />
+            <div class="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink-950/90 to-transparent px-4 py-3">
+              <span class="text-[0.62rem] font-bold uppercase tracking-[0.2em] text-warning">Obras · Instalaciones</span>
+            </div>
+          </div>
         </div>
         <!-- Footer -->
-        <div class="px-7 py-5">
-          <p class="text-sm leading-6 text-white/50">Un solo equipo técnico. Ambas líneas coordinadas internamente.</p>
+        <div class="px-6 py-4">
+          <p class="text-sm leading-6 text-white/45">Un solo equipo técnico. Ambas líneas coordinadas internamente.</p>
         </div>
       </div>
     </div>

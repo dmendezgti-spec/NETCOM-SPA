@@ -1,3 +1,9 @@
+const envPhone = import.meta.env.PUBLIC_COMPANY_PHONE as string | undefined;
+const envWhatsapp = import.meta.env.PUBLIC_COMPANY_WHATSAPP as string | undefined;
+
+const hasPlaceholderDigits = (value?: string) => !value || /0{4,}/.test(value);
+const normalizeWhatsapp = (value?: string) => (value ? value.replace(/\D/g, '') : '');
+
 export const siteConfig = {
   name: 'NETCOM Servicios Integrales SpA',
   shortName: 'NETCOM',
@@ -7,9 +13,9 @@ export const siteConfig = {
   domain: 'netcom.cl',
   url: 'https://netcom.cl',
   location: 'Chile',
-  phone: import.meta.env.PUBLIC_COMPANY_PHONE || '+56 9 0000 0000',
+  phone: hasPlaceholderDigits(envPhone) ? '+56 9 5429 3135' : envPhone,
   email: import.meta.env.PUBLIC_COMPANY_EMAIL || 'contacto@netcom.cl',
-  whatsapp: import.meta.env.PUBLIC_COMPANY_WHATSAPP || '56900000000',
+  whatsapp: hasPlaceholderDigits(envWhatsapp) ? '56954293135' : normalizeWhatsapp(envWhatsapp) || '56954293135',
   hero: {
     badge: 'Tecnología + obras + operación en terreno',
     title: 'Integramos software, redes e infraestructura técnica para ejecutar proyectos de principio a fin.',

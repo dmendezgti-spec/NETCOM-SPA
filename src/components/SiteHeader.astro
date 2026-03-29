@@ -6,10 +6,10 @@ const pathname = Astro.url.pathname;
 ---
 
 <header class="sticky top-0 z-50 border-b border-white/10 bg-ink-950/85 backdrop-blur-xl">
-  <div class="container-shell flex items-center justify-between gap-6 py-4">
+  <div class="container-shell flex items-center justify-between gap-6 py-3">
     <a href="/" class="flex items-center gap-3 text-white" aria-label="Ir al inicio de NETCOM">
-      <img src="/brand/netcom-mark.svg" alt="NETCOM" class="h-10 w-10 sm:hidden" loading="eager" />
-      <img src="/brand/netcom-logo-option-a.svg" alt="NETCOM Servicios Integrales SpA" class="hidden h-10 w-auto sm:block lg:h-11" loading="eager" />
+      <img src="/brand/netcom-mark.svg" alt="NETCOM" class="h-11 w-11 sm:hidden" loading="eager" />
+      <img src="/brand/netcom-logo-option-a.svg" alt="NETCOM Servicios Integrales SpA" class="hidden h-12 w-auto sm:block lg:h-14" loading="eager" />
     </a>
 
     <nav class="hidden items-center gap-6 lg:flex" aria-label="Principal">
@@ -27,7 +27,7 @@ const pathname = Astro.url.pathname;
     </nav>
 
     <div class="hidden items-center gap-3 lg:flex">
-      <a href={`tel:${siteConfig.phone}`} class="text-sm text-white/70 transition hover:text-white">{siteConfig.phone}</a>
+      <a href={`tel:${siteConfig.phone}`} class="text-sm text-white/78 transition hover:text-white">{siteConfig.phone}</a>
       <a href="/contacto" class="cta-primary">Cotizar proyecto</a>
     </div>
 

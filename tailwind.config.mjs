@@ -5,16 +5,16 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#effbff',
-          100: '#d8f5ff',
-          200: '#b6edff',
-          300: '#7eddff',
-          400: '#36c7ff',
-          500: '#08a8eb',
-          600: '#0084c3',
-          700: '#02699d',
-          800: '#0a587f',
-          900: '#104969',
+          50: '#f1f7fb',
+          100: '#dfeef8',
+          200: '#bdddf0',
+          300: '#89c3e3',
+          400: '#4ea5d0',
+          500: '#2f87b5',
+          600: '#236b92',
+          700: '#1f5573',
+          800: '#1d485f',
+          900: '#1e3d4f',
         },
         ink: {
           950: '#07111f',
@@ -32,8 +32,8 @@ export default {
           700: '#38475a',
           800: '#2e3948',
         },
-        accent: '#1ee3cf',
-        warning: '#ffb84d',
+        accent: '#27c296',
+        warning: '#e7a33a',
       },
       fontFamily: {
         display: ['Space Grotesk', 'Segoe UI', 'sans-serif'],
@@ -41,10 +41,10 @@ export default {
       },
       boxShadow: {
         panel: '0 24px 80px rgba(7, 17, 31, 0.12)',
-        glow: '0 0 0 1px rgba(8, 168, 235, 0.18), 0 30px 120px rgba(8, 168, 235, 0.18)',
+        glow: '0 0 0 1px rgba(78, 165, 208, 0.2), 0 24px 85px rgba(14, 48, 77, 0.28)',
       },
       backgroundImage: {
-        grid: 'linear-gradient(to right, rgba(8, 168, 235, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(8, 168, 235, 0.08) 1px, transparent 1px)',
+        grid: 'linear-gradient(to right, rgba(78, 165, 208, 0.08) 1px, transparent 1px), linear-gradient(to bottom, rgba(78, 165, 208, 0.08) 1px, transparent 1px)',
       },
     },
   },

@@ -1,6 +1,5 @@
 ---
 import ContactForm from '@/components/ContactForm.astro';
-import FAQAccordion from '@/components/FAQAccordion.astro';
 import HeroSection from '@/components/HeroSection.astro';
 import IndustryCard from '@/components/IndustryCard.astro';
 import InfrastructureExecutionSection from '@/components/InfrastructureExecutionSection.astro';
@@ -34,7 +33,7 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
       <SectionHeading
         badge="Servicios principales"
         title="Dos líneas de negocio con el mismo peso comercial: tecnología e infraestructura"
-        description="NETCOM responde proyectos completos combinando software, redes y telecomunicaciones con obras, mantención, instalaciones técnicas y ejecución en terreno."
+        description="Un solo equipo para diseñar, instalar y mantener operaciones tecnológicas y técnicas en terreno."
       />
 
       <div class="space-y-6">
@@ -61,8 +60,10 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
         </div>
       </div>
 
-      <div class="rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 text-sm leading-7 text-white/70">
-        NETCOM no opera con la lógica de proveedor parcial. Se diseña e implementa con visión integral para que una empresa no tenga que separar TI, redes, CCTV, obras e infraestructura entre múltiples contratistas.
+      <div class="grid gap-4 rounded-[1.75rem] border border-white/10 bg-white/[0.03] p-6 text-sm leading-7 text-white/70 md:grid-cols-3">
+        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">Una contraparte técnica para todo el proyecto.</div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">Coordinación entre oficina, obra e infraestructura.</div>
+        <div class="rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3">Menos fricción operativa y mayor velocidad de ejecución.</div>
       </div>
     </div>
   </section>
@@ -103,7 +104,7 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
       <SectionHeading
         badge="Soluciones por negocio"
         title="Servicios aterrizados a operaciones reales"
-        description="El sitio queda preparado para crecer hacia páginas y landing pages por línea de negocio, pero desde ya comunica con claridad dónde NETCOM agrega valor según tipo de cliente."
+        description="Priorizamos soluciones para operaciones que necesitan continuidad, soporte y ejecución en terreno."
       />
       <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
         {industries.map((industry) => (
@@ -122,8 +123,8 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
       <div class="space-y-6">
         <SectionHeading
           badge="Experiencia preparada"
-          title="Estructura lista para mostrar proyectos destacados y crecimiento futuro del portafolio"
-          description="Aunque el sitio parte con una base corporativa, la arquitectura ya considera fichas resumidas, categorías y futura expansión a casos de éxito por servicio o industria."
+          title="Proyectos listos para mostrar capacidad técnica y operativa"
+          description="Estructura simple para evidenciar experiencia en TI, seguridad e infraestructura ejecutada en terreno."
         />
         <a href="/proyectos" class="cta-secondary">Ver estructura de proyectos</a>
       </div>
@@ -135,29 +136,16 @@ const heroVariant = Astro.url.searchParams.get('hero') === 'b' ? 'b' : 'a';
     </div>
   </section>
 
-  <section class="section-space border-y border-white/10 bg-white/[0.02]">
-    <div class="container-shell grid gap-12 lg:grid-cols-[0.95fr,1.05fr]">
-      <div class="space-y-6">
-        <SectionHeading
-          badge="Preguntas frecuentes"
-          title="Respuestas claras para acelerar la decisión comercial"
-          description="Sección pensada para reducir fricción, reforzar confianza y abrir futuras oportunidades de posicionamiento orgánico con contenido de intención comercial."
-        />
-      </div>
-      <FAQAccordion />
-    </div>
-  </section>
-
   <section class="section-space">
     <div class="container-shell grid gap-10 lg:grid-cols-[0.8fr,1.2fr]">
       <div class="space-y-6">
         <SectionHeading
           badge="Cotización"
           title="Conversemos tu proyecto técnico, comercial u obra en terreno"
-          description="Desde software y conectividad hasta canalización, mantención e instalaciones técnicas: la captación está preparada para proyectos integrales y solicitudes de cotización por servicio."
+          description="Cuéntanos el objetivo y el alcance. Te respondemos con enfoque técnico y comercial."
         />
         <div class="rounded-[1.75rem] border border-brand-300/20 bg-brand-400/10 p-6 text-sm leading-7 text-brand-50">
-          Cada CTA del sitio conduce a un flujo de contacto consistente para clientes que buscan desarrollo, soporte, habilitación técnica o ejecución de obras menores.
+          Formulario optimizado para solicitudes TI, mantención, habilitación e instalaciones en terreno.
         </div>
       </div>
       <ContactForm compact />

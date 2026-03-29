@@ -11,6 +11,17 @@ const technologyServices = serviceLines.filter((service) =>
 const infrastructureServices = serviceLines.filter((service) =>
   ['obras-menores', 'construccion-habilitaciones'].includes(service.slug),
 );
+
+const serviceVisualBySlug: Record<string, string> = {
+  'desarrollo-software': '/brand/visual-software.svg',
+  'software-ventas-pos': '/brand/visual-software.svg',
+  'redes-conectividad': '/brand/visual-network.svg',
+  telecomunicaciones: '/brand/visual-network.svg',
+  'cctv-seguridad': '/brand/visual-cctv.svg',
+  'soporte-informatico': '/brand/visual-software.svg',
+  'obras-menores': '/brand/visual-construction.svg',
+  'construccion-habilitaciones': '/brand/visual-construction.svg',
+};
 ---
 
 <BaseLayout
@@ -28,7 +39,7 @@ const infrastructureServices = serviceLines.filter((service) =>
       <SectionHeading
         badge="Líneas principales"
         title="Servicios organizados por foco de negocio para facilitar cotización y ejecución"
-        description="Cada línea incluye descripción comercial, problemas frecuentes, beneficios y llamado a la acción para que un cliente identifique rápido dónde NETCOM resuelve su necesidad."
+        description="Contenido simplificado para comparar rápido, entender valor y solicitar cotización sin fricción."
       />
 
       <article id="infraestructura-ejecucion-terreno" class="panel scroll-mt-28 border border-accent/20 bg-accent/10 p-8 lg:p-10">
@@ -67,13 +78,14 @@ const infrastructureServices = serviceLines.filter((service) =>
                   <span class="eyebrow">{service.title}</span>
                   <h3 class="text-balance font-display text-3xl font-bold text-white">{service.short}</h3>
                   <p class="text-sm leading-7 text-white/65">{service.description}</p>
+                  <img src={serviceVisualBySlug[service.slug]} alt={service.title} class="h-40 w-full rounded-xl object-cover" loading="lazy" />
                   <a href="/contacto" class="cta-primary">Solicitar evaluación</a>
                 </div>
                 <div class="grid gap-5 md:grid-cols-2">
                   <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
                     <h4 class="font-display text-xl font-bold text-white">Problemas que resuelve</h4>
                     <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
-                      {service.problems.map((problem) => (
+                      {service.problems.slice(0, 2).map((problem) => (
                         <li>• {problem}</li>
                       ))}
                     </ul>
@@ -81,7 +93,7 @@ const infrastructureServices = serviceLines.filter((service) =>
                   <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
                     <h4 class="font-display text-xl font-bold text-white">Beneficios</h4>
                     <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
-                      {service.benefits.map((benefit) => (
+                      {service.benefits.slice(0, 2).map((benefit) => (
                         <li>• {benefit}</li>
                       ))}
                     </ul>
@@ -102,13 +114,14 @@ const infrastructureServices = serviceLines.filter((service) =>
                 <span class="eyebrow">{service.title}</span>
                 <h3 class="text-balance font-display text-3xl font-bold text-white">{service.short}</h3>
                 <p class="text-sm leading-7 text-white/65">{service.description}</p>
+                <img src={serviceVisualBySlug[service.slug]} alt={service.title} class="h-44 w-full rounded-xl object-cover" loading="lazy" />
                 <a href="/contacto" class="cta-primary">Cotizar ejecución técnica</a>
               </div>
               <div class="grid gap-5 md:grid-cols-2">
                 <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
                   <h4 class="font-display text-xl font-bold text-white">Problemas que resuelve</h4>
                   <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
-                    {service.problems.map((problem) => (
+                    {service.problems.slice(0, 2).map((problem) => (
                       <li>• {problem}</li>
                     ))}
                   </ul>
@@ -116,7 +129,7 @@ const infrastructureServices = serviceLines.filter((service) =>
                 <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
                   <h4 class="font-display text-xl font-bold text-white">Beneficios</h4>
                   <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
-                    {service.benefits.map((benefit) => (
+                    {service.benefits.slice(0, 2).map((benefit) => (
                       <li>• {benefit}</li>
                     ))}
                   </ul>

@@ -47,7 +47,7 @@ export const serviceLines = [
     description:
       'Implementamos soluciones de punto de venta y software comercial para negocios que necesitan vender mejor, controlar stock y operar con información confiable.',
     problems: ['Pérdidas por desorden de stock', 'Cierres de caja lentos', 'Falta de control de ventas y márgenes'],
-    benefits: ['Venta rápida y ordenada', 'Control en tiempo real', 'Base lista para crecimiento multisucursal'],
+    benefits: ['Venta rápida y ordenada', 'Control en tiempo real', 'Escalabilidad para nuevas sucursales'],
   },
   {
     slug: 'redes-conectividad',
@@ -156,7 +156,7 @@ export const featuredProjects = [
   {
     title: 'Implementación POS e inventario para cadena local',
     category: 'POS',
-    summary: 'Base operativa para ventas, stock y reportería comercial con despliegue preparado para nuevas sucursales.',
+    summary: 'Operación de ventas e inventario estabilizada, con control comercial y capacidad de expansión a nuevas sucursales.',
   },
   {
     title: 'Renovación de red y CCTV en oficinas administrativas',
@@ -189,6 +189,6 @@ export const faqItems = [
   {
     question: '¿Cómo se gestionan las solicitudes de cotización?',
     answer:
-      'El formulario queda preparado para conectarse a un webhook, CRM o automatización externa, permitiendo centralizar las consultas sin depender de una sola casilla de correo.',
+      'Atendemos cada solicitud con diagnóstico comercial y técnico, definiendo alcance, prioridades y propuesta según la necesidad de tu operación.',
   },
 ];

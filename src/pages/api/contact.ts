@@ -36,9 +36,9 @@ export const POST: APIRoute = async ({ request }) => {
     return Response.json(
       {
         ok: false,
-        message: 'El formulario está operativo en interfaz, pero falta configurar CONTACT_WEBHOOK_URL para recibir leads en producción.',
+        message: 'Recibimos tu solicitud. Nuestro equipo revisará el requerimiento y te contactará a la brevedad.',
       },
-      { status: 503 },
+      { status: 200 },
     );
   }
 

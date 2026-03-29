@@ -3,6 +3,14 @@ import PageHero from '@/components/PageHero.astro';
 import SectionHeading from '@/components/SectionHeading.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 import { serviceLines } from '@/data/site';
+
+const technologyServices = serviceLines.filter((service) =>
+  ['desarrollo-software', 'software-ventas-pos', 'redes-conectividad', 'telecomunicaciones', 'cctv-seguridad', 'soporte-informatico'].includes(service.slug),
+);
+
+const infrastructureServices = serviceLines.filter((service) =>
+  ['obras-menores', 'construccion-habilitaciones'].includes(service.slug),
+);
 ---
 
 <BaseLayout
@@ -11,31 +19,94 @@ import { serviceLines } from '@/data/site';
 >
   <PageHero
     badge="Servicios"
-    title="Líneas de negocio pensadas para vender, operar y ejecutar con consistencia"
-    description="Cada servicio de NETCOM está redactado para comunicar qué problema resuelve, qué beneficios genera y por qué aporta valor comercial a empresas que necesitan una contraparte técnica seria."
+    title="Portafolio integral: tecnología, soporte operativo y ejecución técnica en terreno"
+    description="NETCOM estructura su oferta en dos líneas de negocio con igual peso: servicios TI y conectividad, junto a infraestructura, mantención y obras menores para habilitar operación real."
   />
 
   <section class="section-space">
     <div class="container-shell space-y-16">
       <SectionHeading
         badge="Líneas principales"
-        title="Portafolio corporativo preparado para crecer por páginas y campañas"
-        description="La estructura queda lista para profundizar cada servicio en futuras landing pages, sin rehacer la arquitectura ni duplicar lógica de contenido."
+        title="Servicios organizados por foco de negocio para facilitar cotización y ejecución"
+        description="Cada línea incluye descripción comercial, problemas frecuentes, beneficios y llamado a la acción para que un cliente identifique rápido dónde NETCOM resuelve su necesidad."
       />
 
+      <article id="infraestructura-ejecucion-terreno" class="panel scroll-mt-28 border border-accent/20 bg-accent/10 p-8 lg:p-10">
+        <div class="grid gap-7 lg:grid-cols-[1fr,1fr]">
+          <div class="space-y-4">
+            <span class="eyebrow">Infraestructura y Ejecución en Terreno</span>
+            <h2 class="text-balance font-display text-3xl font-bold text-white">Obras, mantención e instalaciones técnicas con estándar corporativo</h2>
+            <p class="text-sm leading-7 text-white/80">
+              Además de la capa TI, NETCOM ejecuta habilitaciones, canalizaciones, instalaciones y mantención de infraestructura para proyectos tecnológicos y comerciales en terreno.
+            </p>
+            <div class="grid gap-3 sm:grid-cols-2">
+              <img src="/brand/visual-construction.svg" alt="Obras y habilitaciones técnicas" class="h-28 w-full rounded-xl object-cover" loading="lazy" />
+              <img src="/brand/visual-network.svg" alt="Infraestructura para redes y telecomunicaciones" class="h-28 w-full rounded-xl object-cover" loading="lazy" />
+            </div>
+          </div>
+          <div class="grid gap-4 text-sm leading-7 text-white/75 md:grid-cols-2">
+            <div class="rounded-[1.25rem] border border-white/15 bg-white/10 p-4">Habilitaciones técnicas para oficinas, locales y bodegas.</div>
+            <div class="rounded-[1.25rem] border border-white/15 bg-white/10 p-4">Canalización y adecuaciones para redes, CCTV y control de acceso.</div>
+            <div class="rounded-[1.25rem] border border-white/15 bg-white/10 p-4">Mantención preventiva y correctiva para continuidad operativa.</div>
+            <div class="rounded-[1.25rem] border border-white/15 bg-white/10 p-4">Ejecución de obras menores y soporte operativo en terreno.</div>
+          </div>
+        </div>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="/contacto" class="cta-primary">Cotizar obras e instalaciones</a>
+          <a href="#obras-menores" class="cta-secondary">Ver servicios de infraestructura</a>
+        </div>
+      </article>
+
       <div class="space-y-8">
-        {serviceLines.map((service) => (
+        <h2 class="font-display text-3xl font-bold text-white">Línea TI, software y conectividad</h2>
+        <div class="space-y-8">
+          {technologyServices.map((service) => (
+            <article id={service.slug} class="panel scroll-mt-28 p-8 lg:p-10">
+              <div class="grid gap-8 lg:grid-cols-[0.8fr,1.2fr]">
+                <div class="space-y-4">
+                  <span class="eyebrow">{service.title}</span>
+                  <h3 class="text-balance font-display text-3xl font-bold text-white">{service.short}</h3>
+                  <p class="text-sm leading-7 text-white/65">{service.description}</p>
+                  <a href="/contacto" class="cta-primary">Solicitar evaluación</a>
+                </div>
+                <div class="grid gap-5 md:grid-cols-2">
+                  <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
+                    <h4 class="font-display text-xl font-bold text-white">Problemas que resuelve</h4>
+                    <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
+                      {service.problems.map((problem) => (
+                        <li>• {problem}</li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
+                    <h4 class="font-display text-xl font-bold text-white">Beneficios</h4>
+                    <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
+                      {service.benefits.map((benefit) => (
+                        <li>• {benefit}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+
+      <div class="space-y-8">
+        <h2 class="font-display text-3xl font-bold text-white">Línea infraestructura, mantención y obras</h2>
+        {infrastructureServices.map((service) => (
           <article id={service.slug} class="panel scroll-mt-28 p-8 lg:p-10">
             <div class="grid gap-8 lg:grid-cols-[0.8fr,1.2fr]">
               <div class="space-y-4">
                 <span class="eyebrow">{service.title}</span>
-                <h2 class="text-balance font-display text-3xl font-bold text-white">{service.short}</h2>
+                <h3 class="text-balance font-display text-3xl font-bold text-white">{service.short}</h3>
                 <p class="text-sm leading-7 text-white/65">{service.description}</p>
-                <a href="/contacto" class="cta-primary">Solicitar evaluación</a>
+                <a href="/contacto" class="cta-primary">Cotizar ejecución técnica</a>
               </div>
               <div class="grid gap-5 md:grid-cols-2">
                 <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
-                  <h3 class="font-display text-xl font-bold text-white">Problemas que resuelve</h3>
+                  <h4 class="font-display text-xl font-bold text-white">Problemas que resuelve</h4>
                   <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
                     {service.problems.map((problem) => (
                       <li>• {problem}</li>
@@ -43,7 +114,7 @@ import { serviceLines } from '@/data/site';
                   </ul>
                 </div>
                 <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
-                  <h3 class="font-display text-xl font-bold text-white">Beneficios</h3>
+                  <h4 class="font-display text-xl font-bold text-white">Beneficios</h4>
                   <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
                     {service.benefits.map((benefit) => (
                       <li>• {benefit}</li>

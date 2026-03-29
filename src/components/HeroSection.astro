@@ -1,5 +1,23 @@
 ---
 import { siteConfig } from '@/data/site';
+
+interface Props {
+  variant?: 'a' | 'b';
+}
+
+const { variant = 'a' } = Astro.props;
+
+const heroVariant =
+  variant === 'b'
+    ? {
+        badge: 'Infraestructura + operación + tecnología',
+        title: 'Ejecución técnica integral para empresas que necesitan operar sin detenerse.',
+        description:
+          'Desde software y conectividad hasta obras, mantención, canalización e instalaciones en terreno. NETCOM aborda el proyecto completo con estándar corporativo.',
+        primaryCta: 'Solicitar visita técnica',
+        secondaryCta: 'Explorar líneas de negocio',
+      }
+    : siteConfig.hero;
 ---
 
 <section class="relative overflow-hidden">
@@ -7,19 +25,22 @@ import { siteConfig } from '@/data/site';
   <div class="container-shell section-space pt-14 lg:pt-20">
     <div class="grid items-center gap-10 lg:grid-cols-[1.15fr,0.85fr]">
       <div class="space-y-8">
-        <span class="eyebrow">{siteConfig.hero.badge}</span>
+        <span class="eyebrow">{heroVariant.badge}</span>
         <div class="space-y-6">
           <h1 class="text-balance font-display text-5xl font-bold leading-[1.05] text-white md:text-6xl xl:text-7xl">
-            {siteConfig.hero.title}
+            {heroVariant.title}
           </h1>
           <p class="max-w-2xl text-lg leading-8 text-white/70">
-            {siteConfig.hero.description}
+            {heroVariant.description}
           </p>
         </div>
         <div class="flex flex-col gap-4 sm:flex-row">
-          <a href="/contacto" class="cta-primary">{siteConfig.hero.primaryCta}</a>
-          <a href="/servicios" class="cta-secondary">{siteConfig.hero.secondaryCta}</a>
+          <a href="/contacto" class="cta-primary">{heroVariant.primaryCta}</a>
+          <a href="/servicios" class="cta-secondary">{heroVariant.secondaryCta}</a>
         </div>
+        <p class="max-w-2xl rounded-2xl border border-accent/30 bg-accent/10 px-4 py-3 text-sm leading-7 text-accent">
+          Tecnología que se implementa en terreno: desde diseño de software y redes hasta obras menores, canalización y habilitaciones técnicas para operación real.
+        </p>
         <div class="grid gap-4 sm:grid-cols-3">
           {siteConfig.stats.map((item) => (
             <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
@@ -44,16 +65,16 @@ import { siteConfig } from '@/data/site';
           <div class="grid gap-4 md:grid-cols-2">
             <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
               <p class="text-sm font-semibold text-white">Área TI</p>
-              <p class="mt-2 text-sm leading-6 text-white/60">Software a medida, POS, soporte informático, mantención tecnológica, redes y conectividad.</p>
+              <p class="mt-2 text-sm leading-6 text-white/60">Software a medida, POS, soporte informático, redes, conectividad y telecomunicaciones.</p>
             </div>
             <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
-              <p class="text-sm font-semibold text-white">Área de terreno</p>
-              <p class="mt-2 text-sm leading-6 text-white/60">Cableado estructurado, telecom, CCTV, control de acceso, canalización y habilitaciones técnicas.</p>
+              <p class="text-sm font-semibold text-white">Área obras e infraestructura</p>
+              <p class="mt-2 text-sm leading-6 text-white/60">Obras menores, mantención, instalaciones técnicas, canalización, habilitaciones y ejecución en terreno.</p>
             </div>
           </div>
           <div class="rounded-[1.75rem] border border-brand-400/20 bg-brand-400/10 p-6">
             <p class="text-sm leading-7 text-brand-50">
-              NETCOM une estrategia digital y ejecución física para que una empresa no tenga que coordinar múltiples proveedores cuando el proyecto requiere software, infraestructura y trabajo en terreno.
+              NETCOM une estrategia digital y ejecución física para que cada proyecto tenga continuidad: una empresa, una planificación, una ejecución técnica y una operación que funciona.
             </p>
           </div>
         </div>

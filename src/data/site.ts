@@ -11,17 +11,17 @@ export const siteConfig = {
   email: import.meta.env.PUBLIC_COMPANY_EMAIL || 'contacto@netcom.cl',
   whatsapp: import.meta.env.PUBLIC_COMPANY_WHATSAPP || '56900000000',
   hero: {
-    badge: 'Software + infraestructura + terreno',
-    title: 'Tecnología corporativa con ejecución real en software, redes e instalaciones técnicas.',
+    badge: 'Tecnología + obras + operación en terreno',
+    title: 'Integramos software, redes e infraestructura técnica para ejecutar proyectos de principio a fin.',
     description:
-      'Diseñamos, implementamos y damos soporte a soluciones tecnológicas para empresas que necesitan continuidad operativa, conectividad confiable y ejecución técnica seria en cada proyecto.',
-    primaryCta: 'Solicitar cotización',
+      'NETCOM combina ingeniería digital y ejecución en terreno para habilitar, mantener y operar infraestructura tecnológica y comercial con una sola contraparte técnica.',
+    primaryCta: 'Cotizar proyecto técnico y obras',
     secondaryCta: 'Ver servicios',
   },
   stats: [
-    { value: '360°', label: 'Cobertura desde software hasta habilitación técnica' },
-    { value: 'TI + OT', label: 'Integración entre oficina, terreno e infraestructura' },
-    { value: 'B2B', label: 'Enfoque comercial para pymes, retail y operaciones' },
+    { value: '360°', label: 'Desde software y conectividad hasta obras e instalaciones' },
+    { value: 'TI + Terreno', label: 'Integración real entre diseño técnico y ejecución física' },
+    { value: 'Operación continua', label: 'Mantención, soporte operativo y respuesta técnica' },
   ],
   seo: {
     defaultTitle: 'NETCOM Servicios Integrales SpA | Software, redes, telecomunicaciones e instalaciones técnicas',
@@ -87,23 +87,49 @@ export const serviceLines = [
   },
   {
     slug: 'obras-menores',
-    title: 'Obras Menores e Instalaciones Técnicas',
-    short: 'Ejecución en terreno para habilitar proyectos tecnológicos con estándar.',
+    title: 'Obras Menores y Ejecución en Terreno',
+    short: 'Ejecución técnica en terreno para habilitar proyectos comerciales y tecnológicos.',
     description:
-      'Desarrollamos obras menores asociadas a proyectos tecnológicos, incluyendo soportes, fijaciones, ductería, canalización y terminaciones funcionales.',
-    problems: ['Dependencia de múltiples proveedores', 'Instalaciones improvisadas', 'Riesgos por mala terminación'],
-    benefits: ['Una sola contraparte técnica', 'Ejecución ordenada en terreno', 'Mejor terminación y seguridad'],
+      'Ejecutamos obras menores asociadas a implementación tecnológica, habilitando espacios con criterios técnicos de seguridad, continuidad y orden operacional.',
+    problems: ['Obras improvisadas sin estándar', 'Demoras por coordinación entre contratistas', 'Instalaciones sin terminación profesional'],
+    benefits: ['Una sola contraparte técnica', 'Ejecución controlada en terreno', 'Mejor estándar de terminaciones y seguridad'],
   },
   {
     slug: 'construccion-habilitaciones',
-    title: 'Construcción, Habilitaciones y Canalización',
-    short: 'Base física preparada para redes, seguridad y operación continua.',
+    title: 'Construcción, Canalización y Habilitaciones Técnicas',
+    short: 'Infraestructura física preparada para redes, seguridad y continuidad operativa.',
     description:
-      'Ejecutamos canalizaciones, habilitaciones y adecuaciones técnicas para soportar instalaciones de red, CCTV, control de acceso y equipamiento crítico.',
+      'Desarrollamos canalización, habilitación y adecuaciones técnicas para soportar redes, CCTV, control de acceso, telecomunicaciones y operación comercial.',
     problems: ['Espacios sin infraestructura técnica adecuada', 'Canalización deficiente', 'Proyectos con baja coordinación entre obra y tecnología'],
-    benefits: ['Infraestructura lista para tecnología', 'Mayor orden y seguridad', 'Coordinación real entre construcción y TI'],
+    benefits: ['Infraestructura lista para operar', 'Mayor seguridad y orden técnico', 'Coordinación efectiva entre construcción y TI'],
   },
 ];
+
+export const infrastructureExecutionPillars = [
+  {
+    title: 'Canalización y habilitación técnica',
+    description:
+      'Canalización, ductería, soportes y adecuaciones para dejar espacios listos para equipamiento tecnológico y operación continua.',
+  },
+  {
+    title: 'Mantención e instalaciones en terreno',
+    description:
+      'Mantención preventiva y correctiva de infraestructura, redes, CCTV y componentes críticos para reducir detenciones operativas.',
+  },
+  {
+    title: 'Obras menores para proyectos comerciales',
+    description:
+      'Ejecución de obras técnicas asociadas a apertura, remodelación o mejora de oficinas, locales, bodegas y edificios.',
+  },
+  {
+    title: 'Soporte operativo e infraestructura',
+    description:
+      'Acompañamiento técnico para asegurar continuidad operativa, trazabilidad y respuesta frente a incidencias de terreno.',
+  },
+];
+
+export const integrationStatement =
+  'NETCOM integra software, redes, telecomunicaciones, CCTV, soporte informático, construcción e instalaciones técnicas para resolver proyectos con foco comercial y operacional.';
 
 export const industries = [
   {

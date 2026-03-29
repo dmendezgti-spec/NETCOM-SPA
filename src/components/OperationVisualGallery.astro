@@ -1,0 +1,48 @@
+---
+const visuals = [
+  {
+    src: '/brand/visual-software.svg',
+    title: 'Desarrollo y sistemas',
+    description: 'Soluciones de software y POS para controlar operación comercial y procesos críticos.',
+  },
+  {
+    src: '/brand/visual-network.svg',
+    title: 'Redes y conectividad',
+    description: 'Infraestructura de red y telecomunicaciones para operación estable y escalable.',
+  },
+  {
+    src: '/brand/visual-cctv.svg',
+    title: 'CCTV y seguridad',
+    description: 'Cobertura visual y control de acceso con criterio técnico y continuidad operativa.',
+  },
+  {
+    src: '/brand/visual-construction.svg',
+    title: 'Obras e infraestructura',
+    description: 'Canalización, habilitación, mantención y ejecución en terreno para proyectos técnicos.',
+  },
+];
+---
+
+<section class="section-space pt-0">
+  <div class="container-shell space-y-8">
+    <div class="flex flex-wrap items-end justify-between gap-4">
+      <div class="space-y-3">
+        <span class="eyebrow">Capacidad operativa</span>
+        <h2 class="text-balance font-display text-3xl font-bold text-white md:text-4xl">Imágenes de referencia del servicio integral NETCOM</h2>
+      </div>
+      <a href="/contacto" class="cta-secondary">Cotizar proyecto integral</a>
+    </div>
+
+    <div class="grid gap-6 md:grid-cols-2">
+      {visuals.map((item) => (
+        <article class="panel overflow-hidden">
+          <img src={item.src} alt={item.title} loading="lazy" class="h-56 w-full object-cover" />
+          <div class="p-6">
+            <h3 class="font-display text-2xl font-bold text-white">{item.title}</h3>
+            <p class="mt-3 text-sm leading-7 text-white/64">{item.description}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

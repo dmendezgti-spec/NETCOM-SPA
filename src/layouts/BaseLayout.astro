@@ -1,6 +1,7 @@
 ---
 import SiteFooter from '@/components/SiteFooter.astro';
 import SiteHeader from '@/components/SiteHeader.astro';
+import StickyQuoteCTA from '@/components/StickyQuoteCTA.astro';
 import WhatsAppFloatingButton from '@/components/WhatsAppFloatingButton.astro';
 import { siteConfig } from '@/data/site';
 import '@/styles/global.css';
@@ -14,7 +15,7 @@ interface Props {
 const {
   title = siteConfig.seo.defaultTitle,
   description = siteConfig.seo.defaultDescription,
-  image = '/favicon.svg',
+  image = '/brand/netcom-logo-option-a.svg',
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, siteConfig.url).toString();
@@ -62,6 +63,7 @@ const organizationSchema = {
       <slot />
     </main>
     <SiteFooter />
+    <StickyQuoteCTA />
     <WhatsAppFloatingButton />
   </body>
 </html>

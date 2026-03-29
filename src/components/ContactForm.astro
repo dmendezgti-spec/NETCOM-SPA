@@ -31,7 +31,7 @@ const { compact = false } = Astro.props;
     </div>
     <div class="md:col-span-2">
       <label for="service" class="mb-2 block text-sm font-medium text-white/70">Servicio de interés</label>
-      <select id="service" name="service" required>
+      <select id="service" name="service" required data-service-select>
         <option value="">Selecciona una línea de negocio</option>
         <option>Desarrollo de Software</option>
         <option>Software de Ventas y POS</option>
@@ -42,6 +42,9 @@ const { compact = false } = Astro.props;
         <option>Obras menores e instalaciones técnicas</option>
         <option>Construcción, habilitaciones y canalización</option>
       </select>
+      <p class="mt-2 text-xs leading-6 text-white/55" data-service-microcopy>
+        Si tu requerimiento incluye ejecución en terreno, indica ubicación, metraje aproximado y plazos estimados.
+      </p>
     </div>
     <div class="hidden">
       <label for="website">Sitio web</label>
@@ -49,10 +52,10 @@ const { compact = false } = Astro.props;
     </div>
     <div class="md:col-span-2">
       <label for="message" class="mb-2 block text-sm font-medium text-white/70">Cuéntanos tu proyecto</label>
-      <textarea id="message" name="message" rows={compact ? 4 : 6} required minlength="20"></textarea>
+      <textarea id="message" name="message" rows={compact ? 4 : 6} required minlength="20" data-message-field placeholder="Describe tu necesidad, alcance del proyecto y resultado esperado."></textarea>
     </div>
     <div class="md:col-span-2 flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
-      <button type="submit" class="cta-primary">Enviar solicitud</button>
+      <button type="submit" class="cta-primary" data-submit-label>Enviar solicitud</button>
       <p class="text-sm text-white/50">Respuesta JSON lista para conectar con automatizaciones, correo transaccional o CRM.</p>
     </div>
     <p class="md:col-span-2 hidden rounded-2xl border border-brand-300/20 bg-brand-400/10 px-4 py-3 text-sm text-brand-50" data-form-status></p>
@@ -62,6 +65,44 @@ const { compact = false } = Astro.props;
 <script>
   const form = document.querySelector('[data-contact-form]');
   const statusBox = document.querySelector('[data-form-status]');
+  const serviceSelect = document.querySelector('[data-service-select]');
+  const microcopy = document.querySelector('[data-service-microcopy]');
+  const messageField = document.querySelector('[data-message-field]');
+  const submitLabel = document.querySelector('[data-submit-label]');
+
+  const updateServiceCopy = (service) => {
+    if (!(microcopy instanceof HTMLElement) || !(messageField instanceof HTMLTextAreaElement) || !(submitLabel instanceof HTMLElement)) {
+      return;
+    }
+
+    const terrainServices = ['Obras menores e instalaciones técnicas', 'Construcción, habilitaciones y canalización'];
+    const technologyServices = ['Desarrollo de Software', 'Software de Ventas y POS', 'Redes y Conectividad', 'Telecomunicaciones', 'CCTV y cámaras de seguridad', 'Soporte Informático'];
+
+    if (terrainServices.includes(service)) {
+      microcopy.textContent = 'Para cotizar obras o habilitación, incluye ubicación, metraje, tipo de instalación y fecha objetivo de ejecución.';
+      messageField.placeholder = 'Ejemplo: habilitación de sala técnica, canalización para CCTV y mantención preventiva mensual.';
+      submitLabel.textContent = 'Solicitar visita técnica';
+      return;
+    }
+
+    if (technologyServices.includes(service)) {
+      microcopy.textContent = 'Para una evaluación TI más precisa, detalla sucursales involucradas, sistemas actuales y objetivo comercial del proyecto.';
+      messageField.placeholder = 'Ejemplo: implementación de POS y red para dos locales, con soporte operativo y monitoreo.';
+      submitLabel.textContent = 'Solicitar evaluación TI';
+      return;
+    }
+
+    microcopy.textContent = 'Si tu requerimiento incluye ejecución en terreno, indica ubicación, metraje aproximado y plazos estimados.';
+    messageField.placeholder = 'Describe tu necesidad, alcance del proyecto y resultado esperado.';
+    submitLabel.textContent = 'Enviar solicitud';
+  };
+
+  if (serviceSelect instanceof HTMLSelectElement) {
+    updateServiceCopy(serviceSelect.value);
+    serviceSelect.addEventListener('change', () => {
+      updateServiceCopy(serviceSelect.value);
+    });
+  }
 
   if (form instanceof HTMLFormElement && statusBox instanceof HTMLElement) {
     form.addEventListener('submit', async (event) => {

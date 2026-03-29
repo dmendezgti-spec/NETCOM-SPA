@@ -1,0 +1,17 @@
+<svg width="920" height="220" viewBox="0 0 920 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="b1" x1="36" y1="28" x2="188" y2="188" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1EE3CF"/>
+      <stop offset="1" stop-color="#08A8EB"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="12" y="12" width="196" height="196" rx="30" fill="#0C1727"/>
+  <path d="M52 154V66H76L126 116L146 136V66H168V154H144L94 104L74 84V154H52Z" fill="#F8FBFF"/>
+  <path d="M36 154L77 114L89 126L48 166L36 154Z" fill="url(#b1)"/>
+  <path d="M132 48H156L104 172H80L132 48Z" fill="url(#b1)"/>
+
+  <text x="250" y="102" font-family="'Segoe UI', Arial, sans-serif" font-size="62" font-weight="900" letter-spacing="1.4" fill="#F8FBFF">NETCOM</text>
+  <text x="252" y="144" font-family="'Segoe UI', Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="2.2" fill="#1EE3CF">TECNOLOGIA E INFRAESTRUCTURA</text>
+  <text x="252" y="178" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="500" letter-spacing="1.1" fill="#9CB2C6">Obras menores · Mantencion · Canalizacion · Soporte operativo</text>
+</svg>

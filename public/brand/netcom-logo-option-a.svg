@@ -1,0 +1,22 @@
+<svg width="920" height="220" viewBox="0 0 920 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="a1" x1="30" y1="20" x2="190" y2="200" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#08A8EB"/>
+      <stop offset="1" stop-color="#1EE3CF"/>
+    </linearGradient>
+  </defs>
+  <rect x="10" y="10" width="200" height="200" rx="34" fill="#07111F"/>
+  <rect x="18" y="18" width="184" height="184" rx="28" stroke="#2BD7FF" stroke-opacity="0.35"/>
+  <path d="M48 160V60H75L145 131V60H172V160H145L75 89V160H48Z" fill="url(#a1)"/>
+  <path d="M156 52H177L129 168H108L156 52Z" fill="#F8FBFF"/>
+
+  <g fill="#F8FBFF">
+    <text x="250" y="105" font-family="'Segoe UI', Arial, sans-serif" font-size="64" font-weight="800" letter-spacing="2">NETCOM</text>
+  </g>
+  <g fill="#8EE9FF">
+    <text x="252" y="148" font-family="'Segoe UI', Arial, sans-serif" font-size="22" font-weight="600" letter-spacing="1.8">SERVICIOS INTEGRALES SPA</text>
+  </g>
+  <g fill="#B6C8D8">
+    <text x="252" y="180" font-family="'Segoe UI', Arial, sans-serif" font-size="16" font-weight="500" letter-spacing="1.2">Software - Infraestructura - Construccion - Obras civiles</text>
+  </g>
+</svg>

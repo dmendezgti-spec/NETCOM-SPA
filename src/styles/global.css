@@ -20,10 +20,9 @@ html {
 body {
   @apply bg-ink-950 font-body text-base text-white antialiased;
   background-image:
-    radial-gradient(circle at 8% 6%, rgba(39, 194, 150, 0.09), transparent 24%),
-    radial-gradient(circle at 86% 0, rgba(78, 165, 208, 0.16), transparent 34%),
-    radial-gradient(circle at 55% 100%, rgba(231, 163, 58, 0.07), transparent 30%),
-    linear-gradient(180deg, #07111f 0%, #0d1a2b 100%);
+    radial-gradient(ellipse at 8% 0%, rgba(78, 165, 208, 0.12), transparent 45%),
+    radial-gradient(ellipse at 92% 5%, rgba(47, 135, 181, 0.09), transparent 40%),
+    linear-gradient(180deg, #07111f 0%, #09141f 100%);
 }
 
 main {
@@ -39,11 +38,11 @@ main {
 }
 
 .panel {
-  @apply rounded-[2rem] border border-white/10 bg-white/[0.04] shadow-panel backdrop-blur;
+  @apply rounded-3xl border border-white/10 bg-white/[0.05] shadow-panel backdrop-blur;
 }
 
 .eyebrow {
-  @apply inline-flex items-center gap-2 rounded-full border border-brand-300/35 bg-brand-400/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.28em] text-brand-100;
+  @apply inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.06] px-4 py-2 text-xs font-semibold uppercase tracking-[0.26em] text-white/60;
 }
 
 .grid-glow {
@@ -52,7 +51,7 @@ main {
 }
 
 .hero-highlight {
-  background: linear-gradient(135deg, rgba(31, 85, 115, 0.34), rgba(39, 194, 150, 0.12));
+  background: linear-gradient(145deg, rgba(20, 55, 100, 0.5), rgba(14, 42, 80, 0.3));
 }
 
 .text-balance {
@@ -60,23 +59,23 @@ main {
 }
 
 .heading-hero {
-  @apply text-balance font-display font-bold leading-[1.06] tracking-[-0.01em] text-white;
-  font-size: clamp(2.2rem, 4.8vw, 4.5rem);
+  @apply text-balance font-display font-bold leading-[1.06] tracking-[-0.02em] text-white;
+  font-size: clamp(2rem, 4vw, 3.75rem);
 }
 
 .heading-page {
-  @apply text-balance font-display font-bold leading-[1.1] tracking-[-0.008em] text-white;
-  font-size: clamp(1.95rem, 3.9vw, 3.5rem);
+  @apply text-balance font-display font-bold leading-[1.1] tracking-[-0.015em] text-white;
+  font-size: clamp(1.75rem, 3.5vw, 3.1rem);
 }
 
 .heading-section {
-  @apply text-balance font-display font-bold leading-tight tracking-[-0.006em] text-white;
-  font-size: clamp(1.55rem, 2.7vw, 2.45rem);
+  @apply text-balance font-display font-bold leading-[1.15] tracking-[-0.01em] text-white;
+  font-size: clamp(1.45rem, 2.4vw, 2.2rem);
 }
 
 .heading-card {
-  @apply font-display font-bold leading-snug tracking-[-0.004em] text-white;
-  font-size: clamp(1.2rem, 1.55vw, 1.7rem);
+  @apply font-display font-bold leading-snug tracking-[-0.008em] text-white;
+  font-size: clamp(1.05rem, 1.35vw, 1.45rem);
 }
 
 .copy-md {
@@ -88,11 +87,11 @@ main {
 }
 
 .cta-primary {
-  @apply inline-flex items-center justify-center rounded-full bg-warning px-6 py-3 text-sm font-semibold text-ink-950 transition hover:bg-accent hover:text-ink-950;
+  @apply inline-flex items-center justify-center rounded-full bg-warning px-6 py-3 text-sm font-semibold text-white transition hover:bg-warning/85;
 }
 
 .cta-secondary {
-  @apply inline-flex items-center justify-center rounded-full border border-brand-300/30 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:border-brand-300/55 hover:bg-brand-400/10;
+  @apply inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-3 text-sm font-semibold text-white/85 transition hover:border-white/35 hover:bg-white/10 hover:text-white;
 }
 
 .card-outline {
@@ -105,7 +104,7 @@ main {
   inset: 0;
   border-radius: inherit;
   padding: 1px;
-  background: linear-gradient(180deg, rgba(78, 165, 208, 0.45), rgba(255, 255, 255, 0.02));
+  background: linear-gradient(160deg, rgba(78, 165, 208, 0.35) 0%, rgba(255, 255, 255, 0.04) 60%, transparent 100%);
   -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;

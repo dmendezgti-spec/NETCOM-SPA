@@ -51,15 +51,15 @@ const serviceVisualBySlug: Record<string, string> = {
               Además de la capa TI, NETCOM ejecuta habilitaciones, canalizaciones, instalaciones y mantención de infraestructura para proyectos tecnológicos y comerciales en terreno.
             </p>
             <div class="grid gap-3 sm:grid-cols-2">
-              <img src="/brand/visual-construction.svg" alt="Obras y habilitaciones técnicas" class="h-28 w-full rounded-xl object-cover" loading="lazy" />
-              <img src="/brand/visual-network.svg" alt="Infraestructura para redes y telecomunicaciones" class="h-28 w-full rounded-xl object-cover" loading="lazy" />
+              <img src="/brand/visual-construction.svg" alt="Obras y habilitaciones técnicas" class="h-28 w-full rounded-2xl object-cover" loading="lazy" />
+              <img src="/brand/visual-network.svg" alt="Infraestructura para redes y telecomunicaciones" class="h-28 w-full rounded-2xl object-cover" loading="lazy" />
             </div>
           </div>
-          <div class="grid gap-4 text-sm leading-7 text-white/75 md:grid-cols-2">
-            <div class="rounded-[1.25rem] border border-white/15 bg-white/10 p-4">Habilitaciones técnicas para oficinas, locales y bodegas.</div>
-            <div class="rounded-[1.25rem] border border-white/15 bg-white/10 p-4">Canalización y adecuaciones para redes, CCTV y control de acceso.</div>
-            <div class="rounded-[1.25rem] border border-white/15 bg-white/10 p-4">Mantención preventiva y correctiva para continuidad operativa.</div>
-            <div class="rounded-[1.25rem] border border-white/15 bg-white/10 p-4">Ejecución de obras menores y soporte operativo en terreno.</div>
+            <div class="grid gap-3 sm:grid-cols-2">
+              <div class="rounded-2xl border border-white/15 bg-white/10 p-4 text-sm leading-6 text-white/80">Habilitaciones técnicas para oficinas, locales y bodegas.</div>
+              <div class="rounded-2xl border border-white/15 bg-white/10 p-4 text-sm leading-6 text-white/80">Canalización y adecuaciones para redes, CCTV y control de acceso.</div>
+              <div class="rounded-2xl border border-white/15 bg-white/10 p-4 text-sm leading-6 text-white/80">Mantención preventiva y correctiva para continuidad operativa.</div>
+              <div class="rounded-2xl border border-white/15 bg-white/10 p-4 text-sm leading-6 text-white/80">Ejecución de obras menores y soporte operativo en terreno.</div>
           </div>
         </div>
         <div class="mt-6 flex flex-wrap gap-3">
@@ -82,16 +82,16 @@ const serviceVisualBySlug: Record<string, string> = {
                   <a href="/contacto" class="cta-primary">Solicitar evaluación</a>
                 </div>
                 <div class="grid gap-5 md:grid-cols-2">
-                  <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
-                    <h4 class="font-display text-xl font-bold text-white">Problemas que resuelve</h4>
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                    <h4 class="font-display text-sm font-bold uppercase tracking-[0.16em] text-white/55">Problemas que resuelve</h4>
                     <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
                       {service.problems.slice(0, 2).map((problem) => (
                         <li>• {problem}</li>
                       ))}
                     </ul>
                   </div>
-                  <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
-                    <h4 class="font-display text-xl font-bold text-white">Beneficios</h4>
+                  <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                    <h4 class="font-display text-sm font-bold uppercase tracking-[0.16em] text-white/55">Beneficios</h4>
                     <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
                       {service.benefits.slice(0, 2).map((benefit) => (
                         <li>• {benefit}</li>
@@ -118,16 +118,16 @@ const serviceVisualBySlug: Record<string, string> = {
                 <a href="/contacto" class="cta-primary">Cotizar ejecución técnica</a>
               </div>
               <div class="grid gap-5 md:grid-cols-2">
-                <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
-                  <h4 class="font-display text-xl font-bold text-white">Problemas que resuelve</h4>
+                <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                  <h4 class="font-display text-sm font-bold uppercase tracking-[0.16em] text-white/55">Problemas que resuelve</h4>
                   <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
                     {service.problems.slice(0, 2).map((problem) => (
                       <li>• {problem}</li>
                     ))}
                   </ul>
                 </div>
-                <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
-                  <h4 class="font-display text-xl font-bold text-white">Beneficios</h4>
+                <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
+                  <h4 class="font-display text-sm font-bold uppercase tracking-[0.16em] text-white/55">Beneficios</h4>
                   <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
                     {service.benefits.slice(0, 2).map((benefit) => (
                       <li>• {benefit}</li>

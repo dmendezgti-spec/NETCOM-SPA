@@ -32,8 +32,8 @@ export default {
           700: '#38475a',
           800: '#2e3948',
         },
-        accent: '#27c296',
-        warning: '#f28a2e',
+        accent: '#5ba4e5',
+        warning: '#e8721e',
       },
       fontFamily: {
         display: ['Space Grotesk', 'Segoe UI', 'sans-serif'],

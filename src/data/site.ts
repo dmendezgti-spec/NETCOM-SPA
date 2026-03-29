@@ -17,17 +17,17 @@ export const siteConfig = {
   email: import.meta.env.PUBLIC_COMPANY_EMAIL || 'contacto@netcom.cl',
   whatsapp: hasPlaceholderDigits(envWhatsapp) ? '56954293135' : normalizeWhatsapp(envWhatsapp) || '56954293135',
   hero: {
-    badge: 'Tecnología + obras + operación en terreno',
-    title: 'Integramos software, redes e infraestructura técnica para ejecutar proyectos de principio a fin.',
+    badge: 'Software · Redes · Infraestructura técnica',
+    title: 'Soluciones tecnológicas e infraestructura técnica ejecutadas con estándar corporativo.',
     description:
-      'NETCOM combina ingeniería digital y ejecución en terreno para habilitar, mantener y operar infraestructura tecnológica y comercial con una sola contraparte técnica.',
-    primaryCta: 'Cotizar proyecto técnico y obras',
+      'NETCOM integra software, conectividad, seguridad y ejecución en terreno para habilitar y mantener infraestructura tecnológica y comercial bajo una sola contraparte técnica.',
+    primaryCta: 'Cotizar proyecto',
     secondaryCta: 'Ver servicios',
   },
   stats: [
-    { value: '360°', label: 'Desde software y conectividad hasta obras e instalaciones' },
-    { value: 'TI + Terreno', label: 'Integración real entre diseño técnico y ejecución física' },
-    { value: 'Operación continua', label: 'Mantención, soporte operativo y respuesta técnica' },
+    { value: 'TI + Obras', label: 'Dos líneas de negocio integradas bajo una sola empresa' },
+    { value: 'Multisector', label: 'Retail, oficinas, bodegas, edificios y operaciones comerciales' },
+    { value: 'Soporte real', label: 'Respuesta técnica, mantención y continuidad operativa' },
   ],
   seo: {
     defaultTitle: 'NETCOM Servicios Integrales SpA | Software, redes, telecomunicaciones e instalaciones técnicas',
@@ -180,21 +180,21 @@ export const faqItems = [
   {
     question: '¿NETCOM trabaja solo software o también ejecuta instalaciones en terreno?',
     answer:
-      'Trabajamos ambas líneas. Podemos desarrollar soluciones de software y también ejecutar redes, cableado, CCTV, control de acceso, canalización y habilitaciones técnicas asociadas.',
+      'Ambas líneas. Desarrollamos software y también ejecutamos redes, cableado, CCTV, control de acceso, canalización y habilitaciones técnicas asociadas a cada proyecto.',
   },
   {
     question: '¿Atienden empresas pequeñas y medianas?',
     answer:
-      'Sí. El enfoque está pensado para pymes, retail, oficinas, bodegas y operaciones que necesitan una contraparte técnica seria y escalable.',
+      'Sí. Trabajamos con pymes, retail, oficinas, bodegas y operaciones que necesitan una contraparte técnica seria, con capacidad de respuesta y criterio para escalar.',
   },
   {
-    question: '¿Se puede partir con un proyecto pequeño y luego crecer?',
+    question: '¿Es posible comenzar con un proyecto acotado y ampliar después?',
     answer:
-      'Sí. La arquitectura del servicio y del sitio está pensada para crecer por etapas, priorizando continuidad operativa y orden técnico.',
+      'Sí. La estructura de servicio está diseñada para crecer por etapas, priorizando continuidad operativa y orden técnico en cada fase de implementación.',
   },
   {
-    question: '¿Cómo se gestionan las solicitudes de cotización?',
+    question: '¿Cómo se gestiona una solicitud de cotización?',
     answer:
-      'Atendemos cada solicitud con diagnóstico comercial y técnico, definiendo alcance, prioridades y propuesta según la necesidad de tu operación.',
+      'Cada solicitud recibe un diagnóstico comercial y técnico. Definimos alcance, prioridades y propuesta según la realidad operativa de tu empresa, sin plantillas genéricas.',
   },
 ];

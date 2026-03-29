@@ -38,12 +38,12 @@ const heroVariant =
           <a href="/contacto" class="cta-primary">{heroVariant.primaryCta}</a>
           <a href="/servicios" class="cta-secondary">{heroVariant.secondaryCta}</a>
         </div>
-        <p class="max-w-2xl rounded-2xl border border-accent/35 bg-accent/10 px-4 py-3 text-sm leading-7 text-accent">
+        <p class="max-w-2xl rounded-2xl border border-brand-300/20 bg-brand-400/10 px-4 py-3 text-sm leading-7 text-brand-100">
           Tecnología que se implementa en terreno: desde diseño de software y redes hasta obras menores, canalización y habilitaciones técnicas para operación real.
         </p>
         <div class="grid gap-4 sm:grid-cols-3">
           {siteConfig.stats.map((item) => (
-            <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
+            <div class="rounded-2xl border border-white/10 bg-white/[0.04] p-5">
               <div class="font-display text-xl font-bold text-brand-200 md:text-2xl">{item.value}</div>
               <p class="mt-2 text-sm leading-6 text-white/62">{item.label}</p>
             </div>
@@ -51,32 +51,26 @@ const heroVariant =
         </div>
       </div>
 
-      <div class="panel card-outline hero-highlight overflow-hidden p-7 md:p-9">
-        <div class="grid gap-5">
-          <div class="rounded-[1.75rem] border border-white/10 bg-ink-950/80 p-6">
-            <div class="flex items-center justify-between gap-4">
-              <div>
-                <p class="text-xs uppercase tracking-[0.3em] text-white/45">Capacidades integradas</p>
-                <h2 class="heading-card mt-3">Software, conectividad, seguridad e infraestructura</h2>
-              </div>
-              <span class="rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1 text-xs font-semibold text-brand-100">Corporativo</span>
-            </div>
+      <div class="panel card-outline hero-highlight overflow-hidden p-0">
+        <!-- Header bar -->
+        <div class="flex items-center justify-between gap-4 border-b border-white/10 px-7 py-5">
+          <p class="text-xs font-semibold uppercase tracking-[0.26em] text-white/45">Capacidades integradas</p>
+          <span class="rounded-full border border-brand-300/20 bg-brand-400/10 px-3 py-1.5 text-xs font-semibold text-brand-200">Empresa 360°</span>
+        </div>
+        <!-- Áreas grid -->
+        <div class="grid divide-y divide-white/10 border-b border-white/10 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
+          <div class="p-6">
+            <p class="mb-2 text-[0.65rem] font-bold uppercase tracking-[0.26em] text-warning">Área TI</p>
+            <p class="text-sm font-medium leading-6 text-white/85">Software, POS, redes, soporte y telecomunicaciones.</p>
           </div>
-          <div class="grid gap-4 md:grid-cols-2">
-            <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
-              <p class="text-sm font-semibold text-white">Área TI</p>
-              <p class="mt-2 text-sm leading-6 text-white/60">Software a medida, POS, soporte informático, redes, conectividad y telecomunicaciones.</p>
-            </div>
-            <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
-              <p class="text-sm font-semibold text-white">Área obras e infraestructura</p>
-              <p class="mt-2 text-sm leading-6 text-white/60">Obras menores, mantención, instalaciones técnicas, canalización, habilitaciones y ejecución en terreno.</p>
-            </div>
+          <div class="p-6">
+            <p class="mb-2 text-[0.65rem] font-bold uppercase tracking-[0.26em] text-warning">Área Terreno</p>
+            <p class="text-sm font-medium leading-6 text-white/85">Obras, habilitaciones, canalización e instalaciones técnicas.</p>
           </div>
-          <div class="rounded-[1.75rem] border border-brand-400/20 bg-brand-400/10 p-6">
-            <p class="text-sm leading-7 text-brand-50">
-              NETCOM une estrategia digital y ejecución física para que cada proyecto tenga continuidad: una empresa, una planificación, una ejecución técnica y una operación que funciona.
-            </p>
-          </div>
+        </div>
+        <!-- Statement -->
+        <div class="px-7 py-6">
+          <p class="copy-sm">Una sola contraparte técnica para coordinar software, redes e infraestructura con criterio operacional.</p>
         </div>
       </div>
     </div>

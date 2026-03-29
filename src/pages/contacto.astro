@@ -1,0 +1,48 @@
+---
+import ContactForm from '@/components/ContactForm.astro';
+import FAQAccordion from '@/components/FAQAccordion.astro';
+import PageHero from '@/components/PageHero.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { siteConfig } from '@/data/site';
+---
+
+<BaseLayout
+  title="Contacto | NETCOM Servicios Integrales SpA"
+  description="Solicita una cotización o evaluación técnica a NETCOM. Contacto por formulario, WhatsApp, correo y teléfono."
+>
+  <PageHero
+    badge="Contacto"
+    title="Hablemos de tu operación, tu infraestructura o tu siguiente proyecto"
+    description="El sitio queda preparado para convertir visitas en oportunidades mediante formulario validado, canales directos de contacto y base lista para analítica y automatización."
+  />
+
+  <section class="section-space">
+    <div class="container-shell grid gap-8 lg:grid-cols-[0.9fr,1.1fr]">
+      <div class="space-y-6">
+        <article class="panel p-6">
+          <h2 class="font-display text-2xl font-bold text-white">Canales directos</h2>
+          <div class="mt-5 space-y-4 text-sm text-white/68">
+            <p><strong class="text-white">Correo:</strong> <a href={`mailto:${siteConfig.email}`} class="transition hover:text-brand-200">{siteConfig.email}</a></p>
+            <p><strong class="text-white">Teléfono:</strong> <a href={`tel:${siteConfig.phone}`} class="transition hover:text-brand-200">{siteConfig.phone}</a></p>
+            <p><strong class="text-white">WhatsApp:</strong> <a href={`https://wa.me/${siteConfig.whatsapp}`} target="_blank" rel="noreferrer" class="transition hover:text-brand-200">+56 contacto comercial</a></p>
+            <p><strong class="text-white">Cobertura:</strong> {siteConfig.location}</p>
+          </div>
+        </article>
+        <article class="rounded-[1.75rem] border border-brand-300/20 bg-brand-400/10 p-6 text-sm leading-7 text-brand-50">
+          Si más adelante quieres conectar Meta Pixel, GA4, Tag Manager o formularios externos, la estructura ya está lista para integraciones sin rehacer el front completo.
+        </article>
+      </div>
+      <ContactForm />
+    </div>
+  </section>
+
+  <section class="section-space border-t border-white/10 bg-white/[0.02]">
+    <div class="container-shell grid gap-10 lg:grid-cols-[0.9fr,1.1fr]">
+      <div>
+        <h2 class="font-display text-3xl font-bold text-white">FAQ comercial y técnico</h2>
+        <p class="mt-4 max-w-xl text-base leading-8 text-white/65">Esta sección apoya la conversión y reduce dudas frecuentes antes de que un lead haga clic en cotizar.</p>
+      </div>
+      <FAQAccordion />
+    </div>
+  </section>
+</BaseLayout>

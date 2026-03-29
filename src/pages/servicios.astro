@@ -1,0 +1,60 @@
+---
+import PageHero from '@/components/PageHero.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { serviceLines } from '@/data/site';
+---
+
+<BaseLayout
+  title="Servicios | NETCOM Servicios Integrales SpA"
+  description="Servicios corporativos de software, POS, redes, telecomunicaciones, CCTV, soporte TI, obras menores y habilitaciones técnicas para empresas en Chile."
+>
+  <PageHero
+    badge="Servicios"
+    title="Líneas de negocio pensadas para vender, operar y ejecutar con consistencia"
+    description="Cada servicio de NETCOM está redactado para comunicar qué problema resuelve, qué beneficios genera y por qué aporta valor comercial a empresas que necesitan una contraparte técnica seria."
+  />
+
+  <section class="section-space">
+    <div class="container-shell space-y-16">
+      <SectionHeading
+        badge="Líneas principales"
+        title="Portafolio corporativo preparado para crecer por páginas y campañas"
+        description="La estructura queda lista para profundizar cada servicio en futuras landing pages, sin rehacer la arquitectura ni duplicar lógica de contenido."
+      />
+
+      <div class="space-y-8">
+        {serviceLines.map((service) => (
+          <article id={service.slug} class="panel scroll-mt-28 p-8 lg:p-10">
+            <div class="grid gap-8 lg:grid-cols-[0.8fr,1.2fr]">
+              <div class="space-y-4">
+                <span class="eyebrow">{service.title}</span>
+                <h2 class="text-balance font-display text-3xl font-bold text-white">{service.short}</h2>
+                <p class="text-sm leading-7 text-white/65">{service.description}</p>
+                <a href="/contacto" class="cta-primary">Solicitar evaluación</a>
+              </div>
+              <div class="grid gap-5 md:grid-cols-2">
+                <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
+                  <h3 class="font-display text-xl font-bold text-white">Problemas que resuelve</h3>
+                  <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
+                    {service.problems.map((problem) => (
+                      <li>• {problem}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div class="rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5">
+                  <h3 class="font-display text-xl font-bold text-white">Beneficios</h3>
+                  <ul class="mt-4 space-y-3 text-sm leading-7 text-white/62">
+                    {service.benefits.map((benefit) => (
+                      <li>• {benefit}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

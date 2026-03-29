@@ -1,0 +1,30 @@
+---
+interface Props {
+  title: string;
+  short: string;
+  href?: string;
+}
+
+const { title, short, href = '/servicios' } = Astro.props;
+---
+
+<article class="panel card-outline h-full p-6 transition duration-300 hover:-translate-y-1 hover:border-brand-300/25 hover:bg-white/[0.06]">
+  <div class="flex h-full flex-col justify-between gap-6">
+    <div class="space-y-4">
+      <span class="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-400/10 text-brand-200">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M5 19L19 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          <path d="M9 5H19V15" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <div>
+        <h3 class="font-display text-2xl font-bold text-white">{title}</h3>
+        <p class="mt-3 text-sm leading-7 text-white/62">{short}</p>
+      </div>
+    </div>
+    <a href={href} class="inline-flex items-center gap-2 text-sm font-semibold text-brand-200 transition hover:text-accent">
+      Ver detalle
+      <span aria-hidden="true">→</span>
+    </a>
+  </div>
+</article>

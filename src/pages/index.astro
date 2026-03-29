@@ -1,0 +1,127 @@
+---
+import ContactForm from '@/components/ContactForm.astro';
+import FAQAccordion from '@/components/FAQAccordion.astro';
+import HeroSection from '@/components/HeroSection.astro';
+import IndustryCard from '@/components/IndustryCard.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import ServiceCard from '@/components/ServiceCard.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { featuredProjects, industries, serviceLines } from '@/data/site';
+---
+
+<BaseLayout>
+  <HeroSection />
+
+  <section class="section-space">
+    <div class="container-shell space-y-12">
+      <SectionHeading
+        badge="Servicios principales"
+        title="Una oferta corporativa equilibrada entre software, conectividad e infraestructura técnica"
+        description="La propuesta comercial de NETCOM no se concentra en un solo rubro. Integra desarrollo, operación comercial, soporte, seguridad y ejecución física en terreno para resolver proyectos completos."
+      />
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {serviceLines.map((service) => (
+          <ServiceCard title={service.title} short={service.short} href={`/servicios#${service.slug}`} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space pt-0">
+    <div class="container-shell">
+      <div class="panel card-outline grid gap-8 p-8 lg:grid-cols-[1fr,1.1fr] lg:p-10">
+        <div>
+          <span class="eyebrow">Por qué NETCOM</span>
+          <h2 class="mt-5 text-balance font-display text-3xl font-bold text-white md:text-4xl">
+            Una sola contraparte para coordinar tecnología, operación y habilitación técnica.
+          </h2>
+        </div>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+            <h3 class="font-display text-xl font-bold text-white">Continuidad operativa</h3>
+            <p class="mt-3 text-sm leading-7 text-white/62">Diseño, instalación y soporte con foco en reducir interrupciones y ordenar la plataforma tecnológica.</p>
+          </div>
+          <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+            <h3 class="font-display text-xl font-bold text-white">Criterio técnico comercial</h3>
+            <p class="mt-3 text-sm leading-7 text-white/62">Soluciones pensadas para la realidad de pymes, retail, oficinas y operaciones que necesitan resultados medibles.</p>
+          </div>
+          <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+            <h3 class="font-display text-xl font-bold text-white">Ejecución en terreno</h3>
+            <p class="mt-3 text-sm leading-7 text-white/62">No solo proponemos. También habilitamos, canalizamos, montamos y dejamos la infraestructura lista para operar.</p>
+          </div>
+          <div class="rounded-[1.5rem] border border-white/10 bg-white/5 p-5">
+            <h3 class="font-display text-xl font-bold text-white">Base escalable</h3>
+            <p class="mt-3 text-sm leading-7 text-white/62">Cada solución queda pensada para crecer hacia nuevos servicios, sucursales, automatizaciones o módulos futuros.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space border-y border-white/10 bg-white/[0.02]">
+    <div class="container-shell space-y-12">
+      <SectionHeading
+        badge="Soluciones por negocio"
+        title="Servicios aterrizados a operaciones reales"
+        description="El sitio queda preparado para crecer hacia páginas y landing pages por línea de negocio, pero desde ya comunica con claridad dónde NETCOM agrega valor según tipo de cliente."
+      />
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        {industries.map((industry) => (
+          <IndustryCard title={industry.title} description={industry.description} />
+        ))}
+      </div>
+      <div class="flex flex-wrap gap-4">
+        <a href="/soluciones" class="cta-primary">Explorar soluciones</a>
+        <a href="/contacto" class="cta-secondary">Hablar con NETCOM</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container-shell grid gap-12 lg:grid-cols-[0.95fr,1.05fr]">
+      <div class="space-y-6">
+        <SectionHeading
+          badge="Experiencia preparada"
+          title="Estructura lista para mostrar proyectos destacados y crecimiento futuro del portafolio"
+          description="Aunque el sitio parte con una base corporativa, la arquitectura ya considera fichas resumidas, categorías y futura expansión a casos de éxito por servicio o industria."
+        />
+        <a href="/proyectos" class="cta-secondary">Ver estructura de proyectos</a>
+      </div>
+      <div class="grid gap-6 md:grid-cols-3">
+        {featuredProjects.map((project) => (
+          <ProjectCard title={project.title} category={project.category} summary={project.summary} />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space border-y border-white/10 bg-white/[0.02]">
+    <div class="container-shell grid gap-12 lg:grid-cols-[0.95fr,1.05fr]">
+      <div class="space-y-6">
+        <SectionHeading
+          badge="Preguntas frecuentes"
+          title="Respuestas claras para acelerar la decisión comercial"
+          description="Sección pensada para reducir fricción, reforzar confianza y abrir futuras oportunidades de posicionamiento orgánico con contenido de intención comercial."
+        />
+      </div>
+      <FAQAccordion />
+    </div>
+  </section>
+
+  <section class="section-space">
+    <div class="container-shell grid gap-10 lg:grid-cols-[0.8fr,1.2fr]">
+      <div class="space-y-6">
+        <SectionHeading
+          badge="Cotización"
+          title="Conversemos tu necesidad técnica"
+          description="Software, conectividad, seguridad o habilitación técnica: el sitio ya incorpora una base de captación preparada para Cloudflare y conexión a automatizaciones externas."
+        />
+        <div class="rounded-[1.75rem] border border-brand-300/20 bg-brand-400/10 p-6 text-sm leading-7 text-brand-50">
+          Cada CTA del sitio conduce a un flujo de contacto consistente. Esa repetición estratégica mejora conversión sin sobrecargar la navegación.
+        </div>
+      </div>
+      <ContactForm compact />
+    </div>
+  </section>
+</BaseLayout>

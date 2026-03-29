@@ -1,0 +1,38 @@
+---
+import PageHero from '@/components/PageHero.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import { featuredProjects, projectCategories } from '@/data/site';
+---
+
+<BaseLayout
+  title="Proyectos y experiencia | NETCOM Servicios Integrales SpA"
+  description="Estructura preparada para mostrar proyectos destacados, categorías y fichas resumidas de experiencia de NETCOM en software, redes, seguridad e infraestructura técnica."
+>
+  <PageHero
+    badge="Proyectos y experiencia"
+    title="Base preparada para exhibir casos, categorías y evidencia comercial"
+    description="Aunque el portafolio puede partir acotado, el sitio ya queda listo para presentar proyectos destacados, ordenar categorías y crecer hacia fichas completas de experiencia."
+  />
+
+  <section class="section-space">
+    <div class="container-shell space-y-10">
+      <SectionHeading
+        badge="Categorías"
+        title="Una estructura simple hoy, escalable mañana"
+        description="Cada categoría puede transformarse más adelante en un archivo de contenido, colección o landing page específica sin cambiar el patrón de presentación."
+      />
+      <div class="flex flex-wrap gap-3">
+        {projectCategories.map((category) => (
+          <span class="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/70">{category}</span>
+        ))}
+      </div>
+      <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+        {featuredProjects.map((project) => (
+          <ProjectCard title={project.title} category={project.category} summary={project.summary} />
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

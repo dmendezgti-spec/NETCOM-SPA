@@ -1,0 +1,18 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "netcom-spa",
+  "compatibility_date": "2026-03-28",
+  "pages_build_output_dir": "./dist",
+  "observability": {
+    "enabled": true
+  }
+  // Para usar sesiones en producción con Cloudflare, crear un KV Namespace
+  // y agregarlo aquí cuando tengas el ID real:
+  // "kv_namespaces": [
+  //   {
+  //     "binding": "SESSION",
+  //     "id": "REEMPLAZAR_ID_PRODUCCION",
+  //     "preview_id": "REEMPLAZAR_ID_STAGING"
+  //   }
+  // ]
+}

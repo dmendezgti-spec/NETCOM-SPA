@@ -1,0 +1,32 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Astro: dev",
+			"type": "shell",
+			"command": "C:\\Program Files\\nodejs\\node.exe",
+			"args": [
+				".\\node_modules\\astro\\astro.js",
+				"dev",
+				"--host"
+			],
+			"isBackground": true,
+			"problemMatcher": [
+				{
+					"pattern": [
+						{ "regexp": ".", "file": 1, "location": 2, "message": 3 }
+					],
+					"background": {
+						"activeOnStart": true,
+						"beginsPattern": "astro",
+						"endsPattern": "watching for file changes"
+					}
+				}
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}

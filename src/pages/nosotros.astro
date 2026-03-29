@@ -1,0 +1,52 @@
+---
+import PageHero from '@/components/PageHero.astro';
+import SectionHeading from '@/components/SectionHeading.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Nosotros | NETCOM Servicios Integrales SpA"
+  description="Conoce el enfoque técnico, operativo y comercial de NETCOM Servicios Integrales SpA para proyectos de software, redes, telecomunicaciones e infraestructura técnica."
+>
+  <PageHero
+    badge="Nosotros"
+    title="Una empresa técnica, multidisciplinaria y enfocada en continuidad operativa"
+    description="NETCOM Servicios Integrales SpA nace para responder a una necesidad concreta del mercado: contar con una contraparte capaz de unir software, redes, telecomunicaciones, soporte TI e instalaciones técnicas sin fragmentar la ejecución."
+  />
+
+  <section class="section-space">
+    <div class="container-shell grid gap-8 lg:grid-cols-2">
+      <div class="panel p-8">
+        <SectionHeading
+          badge="Quiénes somos"
+          title="Ingeniería aplicada a la realidad de empresas que necesitan resolver"
+          description="Trabajamos con enfoque corporativo y lenguaje claro. Diseñamos soluciones, implementamos en terreno y acompañamos la operación para que la tecnología no quede desconectada de la ejecución real."
+        />
+      </div>
+      <div class="panel p-8">
+        <SectionHeading
+          badge="Visión profesional"
+          title="Crecer junto a clientes que valoran orden, soporte y criterio técnico"
+          description="La visión de NETCOM es consolidarse como una empresa confiable para proyectos tecnológicos integrales en Chile, con capacidad de abordar tanto la capa digital como la física de una solución."
+        />
+      </div>
+    </div>
+  </section>
+
+  <section class="section-space pt-0">
+    <div class="container-shell grid gap-6 md:grid-cols-3">
+      <article class="panel p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Enfoque técnico</h2>
+        <p class="mt-3 text-sm leading-7 text-white/62">Evaluamos la necesidad, proponemos soluciones realistas y ejecutamos con estándar técnico, orden documental y foco en mantenibilidad.</p>
+      </article>
+      <article class="panel p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Compromiso con calidad</h2>
+        <p class="mt-3 text-sm leading-7 text-white/62">La calidad no se limita al equipamiento. Incluye continuidad operativa, terminaciones correctas, soporte y una experiencia seria para el cliente.</p>
+      </article>
+      <article class="panel p-6">
+        <h2 class="font-display text-2xl font-bold text-white">Continuidad operativa</h2>
+        <p class="mt-3 text-sm leading-7 text-white/62">Cada proyecto se entiende como parte de una operación que no puede detenerse. Por eso priorizamos confiabilidad, trazabilidad y capacidad de respuesta.</p>
+      </article>
+    </div>
+  </section>
+</BaseLayout>

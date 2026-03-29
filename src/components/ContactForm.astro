@@ -1,0 +1,102 @@
+---
+interface Props {
+  compact?: boolean;
+}
+
+const { compact = false } = Astro.props;
+---
+
+<div class="panel p-6 md:p-8">
+  <div class="mb-6 space-y-2">
+    <h2 class="font-display text-2xl font-bold text-white">Solicita una evaluación técnica o cotización</h2>
+    <p class="text-sm leading-7 text-white/62">Cuéntanos el contexto del proyecto. El formulario valida datos y queda preparado para integrarse a webhook, CRM o automatización externa.</p>
+  </div>
+
+  <form action="/api/contact" method="post" class="grid gap-4 md:grid-cols-2" data-contact-form novalidate>
+    <div>
+      <label for="name" class="mb-2 block text-sm font-medium text-white/70">Nombre</label>
+      <input id="name" name="name" type="text" autocomplete="name" required minlength="3" />
+    </div>
+    <div>
+      <label for="company" class="mb-2 block text-sm font-medium text-white/70">Empresa</label>
+      <input id="company" name="company" type="text" autocomplete="organization" required minlength="2" />
+    </div>
+    <div>
+      <label for="email" class="mb-2 block text-sm font-medium text-white/70">Correo</label>
+      <input id="email" name="email" type="email" autocomplete="email" required />
+    </div>
+    <div>
+      <label for="phone" class="mb-2 block text-sm font-medium text-white/70">Teléfono</label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" required minlength="8" />
+    </div>
+    <div class="md:col-span-2">
+      <label for="service" class="mb-2 block text-sm font-medium text-white/70">Servicio de interés</label>
+      <select id="service" name="service" required>
+        <option value="">Selecciona una línea de negocio</option>
+        <option>Desarrollo de Software</option>
+        <option>Software de Ventas y POS</option>
+        <option>Redes y Conectividad</option>
+        <option>Telecomunicaciones</option>
+        <option>CCTV y cámaras de seguridad</option>
+        <option>Soporte Informático</option>
+        <option>Obras menores e instalaciones técnicas</option>
+        <option>Construcción, habilitaciones y canalización</option>
+      </select>
+    </div>
+    <div class="hidden">
+      <label for="website">Sitio web</label>
+      <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+    </div>
+    <div class="md:col-span-2">
+      <label for="message" class="mb-2 block text-sm font-medium text-white/70">Cuéntanos tu proyecto</label>
+      <textarea id="message" name="message" rows={compact ? 4 : 6} required minlength="20"></textarea>
+    </div>
+    <div class="md:col-span-2 flex flex-col gap-4 pt-2 sm:flex-row sm:items-center sm:justify-between">
+      <button type="submit" class="cta-primary">Enviar solicitud</button>
+      <p class="text-sm text-white/50">Respuesta JSON lista para conectar con automatizaciones, correo transaccional o CRM.</p>
+    </div>
+    <p class="md:col-span-2 hidden rounded-2xl border border-brand-300/20 bg-brand-400/10 px-4 py-3 text-sm text-brand-50" data-form-status></p>
+  </form>
+</div>
+
+<script>
+  const form = document.querySelector('[data-contact-form]');
+  const statusBox = document.querySelector('[data-form-status]');
+
+  if (form instanceof HTMLFormElement && statusBox instanceof HTMLElement) {
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      if (!form.reportValidity()) {
+        return;
+      }
+
+      statusBox.classList.remove('hidden');
+      statusBox.textContent = 'Enviando solicitud...';
+
+      const formData = new FormData(form);
+      const payload = Object.fromEntries(formData.entries());
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.message || 'No fue posible enviar la solicitud.');
+        }
+
+        statusBox.textContent = result.message || 'Solicitud enviada correctamente.';
+        form.reset();
+      } catch (error) {
+        statusBox.textContent = error instanceof Error ? error.message : 'No fue posible enviar la solicitud.';
+      }
+    });
+  }
+</script>
